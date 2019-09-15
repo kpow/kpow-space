@@ -27,6 +27,7 @@
  */
 
 .title1 {
+  font-family: 'Slackey';
   font-size: var(--font-title1-size);
   line-height: var(--font-title1-line-height);
 }
@@ -89,6 +90,7 @@
 }
 
 .responsiveTitle1 {
+  font-family: 'Slackey';
   font-weight: 900;
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
@@ -106,6 +108,7 @@
 }
 
 .responsiveTitle2 {
+  font-family: 'Slackey';
   font-weight: 900;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
@@ -123,6 +126,7 @@
 }
 
 .responsiveTitle3 {
+  font-family: 'Slackey';
   font-weight: 900;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
