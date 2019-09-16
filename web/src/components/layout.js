@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from './header'
+import Footer from './footer'
 import Helmet from 'react-helmet'
-
-
+import {
+  Container,Grid,Image,List,Segment,
+} from 'semantic-ui-react';
 
 import '../styles/layout.css'
 import LayoutStyles from './layout.module.css'
@@ -16,9 +18,9 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
 
     <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
     <div className={LayoutStyles.content}>{children}</div>
-    <footer className={LayoutStyles.footer}>
+   
+    <Footer />
 
-    </footer>
   </>
 )
 
