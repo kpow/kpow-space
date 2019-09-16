@@ -2,6 +2,7 @@
 @import '../styles/custom-properties.css';
 
 .content {
+  margin-top: 60px;
   @media (--media-min-small) {
 
   }

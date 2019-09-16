@@ -3,7 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import Helmet from 'react-helmet'
 import {
-  Container,Grid,Image,List,Segment,
+  Container
 } from 'semantic-ui-react';
 
 import '../styles/layout.css'
@@ -19,8 +19,9 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     </Helmet>
 
     <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div className={LayoutStyles.content}>{children}</div>
-    <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
+    <Container>
+      <div className={LayoutStyles.content}>{children}</div>
+    </Container>
     <Footer />
 
   </>

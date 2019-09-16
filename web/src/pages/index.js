@@ -86,7 +86,6 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Container>
         {projectNodes && (
           <ProjectPreviewGrid
             title='Latest projects'
@@ -94,7 +93,9 @@ const IndexPage = props => {
             browseMoreHref='/archive/'
           />
         )}
-      </Container>
+        
+        <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
+
     </Layout>
   )
 }
