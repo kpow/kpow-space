@@ -28,7 +28,7 @@ function Project (props) {
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+            <h1>{title}</h1>
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>
@@ -42,7 +42,7 @@ function Project (props) {
             {members && members.length > 0 && <RoleList items={members} title='Project members' />}
             {categories && categories.length > 0 && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
+                <h3>Categories</h3>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
@@ -52,7 +52,7 @@ function Project (props) {
             )}
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
+                <h3>Related projects</h3>
                 <ul>
                   {relatedProjects.map(project => (
                     <li key={`related_${project._id}`}>

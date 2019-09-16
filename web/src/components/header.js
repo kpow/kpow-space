@@ -1,10 +1,7 @@
 import {Link} from 'gatsby'
 import React from 'react'
-import Icon from './icon'
-import {cn} from '../lib/helpers'
 import {Container, Menu} from 'semantic-ui-react'
 
-import HeaderStyles from './header.module.css'
 import styles from './project-preview.module.css'
 
 import Skull from '../static/skull.svg';
@@ -52,21 +49,6 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
       </Container>
     </Menu>
   
-
-    <div className={HeaderStyles.wrapper}>
-
-      <button className={HeaderStyles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol='hamburger' />
-      </button>
-
-      <nav className={cn(styles.nav, showNav && HeaderStyles.showNav)}>
-        <ul>
-          <li>
-            <Link to='/archive/'>Archive</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
   </div>
 )
 

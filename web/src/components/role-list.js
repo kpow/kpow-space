@@ -8,7 +8,7 @@ import styles from './role-list.module.css'
 function RoleList ({items, title}) {
   return (
     <div className={styles.root}>
-      <h2 className={styles.headline}>{title}</h2>
+      <h2>{title}</h2>
       <ul className={styles.list}>
         {items.map(item => (
           <li key={item._key} className={styles.listItem}>

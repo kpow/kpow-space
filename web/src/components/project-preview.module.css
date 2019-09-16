@@ -25,18 +25,11 @@
 
 .title {
   @media (hover: hover) {
-    @nest .root:hover & {
-      text-decoration: underline;
-    }
+ 
   }
 }
 
 .excerpt {
-  @nest & p {
-    margin: 0.5em 0;
-  }
 
-  @nest & strong {
-    font-weight: 600;
-  }
+  
 }
