@@ -39,7 +39,6 @@ export const query = graphql`
 
 
 const AllstarsPage = props => {
-  getStarsData();
   const {data, errors} = props
   if (errors) {
     return (
