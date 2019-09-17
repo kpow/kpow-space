@@ -63,7 +63,7 @@ export const query = graphql`
 
 const getStarsData = (page = 1) => {
   console.log("getjson");
-  axios.get('http://services.kpow.com/stars.php?page=' + page + '&perPage=18')
+  axios.get('https://services.kpow.com/stars.php?page=' + page + '&perPage=18')
   .then(function (response) {
     // handle success
     console.log(response.data.reverse());
@@ -80,7 +80,7 @@ const getStarsData = (page = 1) => {
 
 const getBooksData = () => {
   console.log('getbooksjson');
-  axios.get('http://services.kpow.com/books.php?page=1')
+  axios.get('https://services.kpow.com/books.php?page=1')
   .then(function (response) {
     // handle success
     let raw = convert.xml2json(response.data, {compact: true, spaces: 4})

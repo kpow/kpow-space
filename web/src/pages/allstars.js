@@ -36,8 +36,6 @@ export const query = graphql`
   }
 `
 
-
-
 const AllstarsPage = props => {
   const {data, errors} = props
   if (errors) {
