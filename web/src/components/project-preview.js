@@ -13,8 +13,8 @@ function ProjectPreview (props) {
     <Link className={styles.root} to={`/project/${props.slug.current}`}>
  
  
-      <Card fluid as='a'
-        style={{minHeight:'400px', maxHeight:'400px', marginBottom:'20px'}}>
+      <Card fluid
+        style={{minHeight:'370px', maxHeight:'400px', marginBottom:'20px'}}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -34,9 +34,6 @@ function ProjectPreview (props) {
         <Card.Description>
           <BlockText blocks={props._rawExcerpt} />
         </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-       
       </Card.Content>
     </Card>  
 

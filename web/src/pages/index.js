@@ -10,6 +10,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import goodReadsJSONResponse from 'goodreads-json-api'
+import convert from 'xml-js'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -59,7 +61,72 @@ export const query = graphql`
   }
 `
 
+
+function getJSON(url) {
+  var xhr = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText));
+        } else {
+          reject(xhr.responseText);
+        }
+      }
+    };
+    xhr.open("GET", url);
+    xhr.send();
+  });
+}
+
+function getXML(url) {
+  var xhr = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(xhr.responseText);
+        } else {
+          reject(xhr.responseText);
+        }
+      }
+    };
+    xhr.open("GET", url);
+    xhr.send();
+  });
+}
+
+const getStarsData = (page = 1) => {
+  console.log("getjson");
+  getJSON("http://services.kpow.com/stars.php?page=" + page + "&perPage=18")
+    .then(data => {
+      console.log("page = " + page);
+      console.log(data.reverse());
+    })
+    .then(() => {
+      console.log("dingdong");
+    });
+};
+
+const getBooksData = () => {
+  console.log("getbooksjson");
+  getXML("http://services.kpow.com/books.php?page=1")
+    .then(data => {
+      let raw = convert.xml2json(data, {compact: true, spaces: 4})
+      let json = JSON.parse(raw);
+      let reviews = json.GoodreadsResponse.reviews.review.reverse();
+      console.log(reviews);
+    })
+    .then(() => {
+      console.log("dingdong");
+    });
+};
+
+getStarsData();
+getBooksData();
+
 const IndexPage = props => {
+ 
   const {data, errors} = props
 
   if (errors) {

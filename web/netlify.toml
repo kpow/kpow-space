@@ -1,0 +1,4 @@
+
+[[redirects]]
+  from = "/star-api/"
+  to = "https://services.kpow.com/stars.php?perPage=100&page=1"

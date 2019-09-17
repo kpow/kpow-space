@@ -37,10 +37,10 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
             </span>
           </h1>
         </Menu.Item>
-        <Menu.Item position='right' as={Link} to='/allstars'>
+        <Menu.Item position='right' as={Link} to='/allstars/'>
           allstars
         </Menu.Item>
-        <Menu.Item as={Link} to='/allbooks'>
+        <Menu.Item as={Link} to='/allbooks/'>
           allbooks
         </Menu.Item>
         <Menu.Item>
