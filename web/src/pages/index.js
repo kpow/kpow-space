@@ -9,6 +9,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import StarPreviewGrid from '../components/star-preview-grid'
+import BookPreviewGrid from '../components/book-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
@@ -332,6 +333,747 @@ const IndexPage = props => {
   }
 ]
 
+const bookData = [
+          {
+            "id": "2960755988",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "43263243"
+              },
+              "isbn": "1250165261",
+              "isbn13": "9781250165268",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "5"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.p_tgNTKdB5gOOfnC_pHKZw",
+              "title": "Gamechanger",
+              "title_without_series": "Gamechanger",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556770272l/43263243._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556770272l/43263243._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/43263243-gamechanger",
+              "num_pages": "576",
+              "format": "Hardcover",
+              "edition_information": "",
+              "publisher": "Tor Books",
+              "publication_day": "17",
+              "publication_year": "2019",
+              "publication_month": "9",
+              "average_rating": "4.14",
+              "ratings_count": "7",
+              "description": "<b><i>Neuromancer</i> meets <i>Star Trek</i> in <i>Gamechanger</i>, a fantastic new book from award-winning author L. X. Beckett.</b><br /><br />First there was the Setback. Then came the Clawback. Now humanity thrives.<br /><br />Rubi Whiting is a member of the Bounceback Generation. The first to be raised free of the troubles of the late twenty-first century. Now she works as a public defender to help troubled individuals with anti-social behavior. That’s how she met Luciano Pox.<br /><br />Luce is a firebrand and has made a name for himself as a naysayer. But there’s more to him than being a lightning rod for controversy. Rubi has to find out why the governments of the world want to bring Luce into custody, and why Luce is hell bent on stopping the recovery of the planet.",
+              "authors": {
+                "author": {
+                  "id": "17991212",
+                  "name": "L.X. Beckett",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "true",
+                    "__cdata": "https://s.gr-assets.com/assets/nophoto/user/u_200x266-e183445fd1a1b5cc7075bb1cf7043306.png"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "true",
+                    "__cdata": "https://s.gr-assets.com/assets/nophoto/user/u_50x66-632230dc9882b4352d753eedf9396530.png"
+                  },
+                  "link": "https://www.goodreads.com/author/show/17991212.L_X_Beckett",
+                  "average_rating": "3.85",
+                  "ratings_count": "80",
+                  "text_reviews_count": "21"
+                }
+              },
+              "published": "2019",
+              "work": {
+                "id": "67142091",
+                "uri": "kca://work/amzn1.gr.work.v1.8bt4j0uiKiMbpYnPYFO2Cg"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2606956806",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Sun Sep 01 14:07:05 -0700 2019",
+            "date_updated": "Sun Sep 01 14:07:05 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2960755988",
+            "link": "https://www.goodreads.com/review/show/2960755988",
+            "owned": "0"
+          },
+          {
+            "id": "2949897344",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "25546167"
+              },
+              "isbn": "1632154269",
+              "isbn13": "9781632154262",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "1255"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.NmrbTJ_XIkvJvRCMzPiZ8w",
+              "title": "Descender, Vol. 1: Tin Stars",
+              "title_without_series": "Descender, Vol. 1: Tin Stars",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435054237l/25546167._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435054237l/25546167._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/25546167-descender-vol-1",
+              "num_pages": "160",
+              "format": "Paperback",
+              "edition_information": "Trade",
+              "publisher": "Image Comics",
+              "publication_day": "24",
+              "publication_year": "2015",
+              "publication_month": "9",
+              "average_rating": "4.08",
+              "ratings_count": "13510",
+              "description": "Young Robot boy TIM-21 and his companions struggle to stay alive in a universe where all androids have been outlawed and bounty hunters lurk on every planet. Written by award-winning creator, Jeff Lemire, Descender is a rip-roaring and heart-felt cosmic odyssey. Lemire pits humanity against machine, and world against world, to create a sprawling epic. Created by Jeff Lemire (<i>Sweet Tooth</i>, <i>Trillium</i>) and Dustin Nguyen's (<i>Little Gotham</i>) critically acclaimed, bestselling new science fiction series!<br /><br /><b>Collecting</b>: <i>Descender</i> 1-6",
+              "authors": {
+                "author": {
+                  "id": "543719",
+                  "name": "Jeff Lemire",
+                  "role": "Writer",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1300396580p5/543719.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1300396580p2/543719.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/543719.Jeff_Lemire",
+                  "average_rating": "3.98",
+                  "ratings_count": "222768",
+                  "text_reviews_count": "21827"
+                }
+              },
+              "published": "2015",
+              "work": {
+                "id": "45338966",
+                "uri": "kca://work/amzn1.gr.work.v1.goi2Zvnk0rRPaay7GFabxg"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2596009446",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Sat Aug 24 05:07:46 -0700 2019",
+            "date_updated": "Sat Aug 24 05:07:47 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2949897344",
+            "link": "https://www.goodreads.com/review/show/2949897344",
+            "owned": "0"
+          },
+          {
+            "id": "2946601414",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "31189192"
+              },
+              "isbn": {
+                "_nil": "true"
+              },
+              "isbn13": {
+                "_nil": "true"
+              },
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "117"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.I9f-v1CYyutwYRenx8GnRA",
+              "title": "Null States (The Centenal Cycle, #2)",
+              "title_without_series": "Null States",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1484154863l/31189192._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1484154863l/31189192._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/31189192-null-states",
+              "num_pages": "432",
+              "format": "ebook",
+              "edition_information": "",
+              "publisher": "Tor.com",
+              "publication_day": "19",
+              "publication_year": "2017",
+              "publication_month": "9",
+              "average_rating": "3.87",
+              "ratings_count": "995",
+              "description": "The future of democracy is about to implode.<br /><br />After the last controversial global election, the global infomocracy that has ensured thirty years of world peace is fraying at the edges. As the new Supermajority government struggles to establish its legitimacy, agents of Information across the globe strive to keep the peace and maintain the flows of data that feed the new world order.<br /><br />In the newly-incorporated DarFur, a governor dies in a fiery explosion. In Geneva, a superpower hatches plans to bring microdemocracy to its knees. In Central Asia, a sprawling war among archaic states threatens to explode into a global crisis. And across the world, a shadowy plot is growing, threatening to strangle Information with the reins of power.<br /><br />\"",
+              "authors": {
+                "author": {
+                  "id": "14220734",
+                  "name": "Malka Ann Older",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1446698915p5/14220734.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1446698915p2/14220734.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/14220734.Malka_Ann_Older",
+                  "average_rating": "3.70",
+                  "ratings_count": "7258",
+                  "text_reviews_count": "1388"
+                }
+              },
+              "published": "2017",
+              "work": {
+                "id": "51832886",
+                "uri": "kca://work/amzn1.gr.work.v1.lbDPuVfiFSWdlEyjwVkzOw"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2592772850",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Wed Aug 21 12:18:19 -0700 2019",
+            "date_updated": "Wed Aug 21 12:18:19 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2946601414",
+            "link": "https://www.goodreads.com/review/show/2946601414",
+            "owned": "0"
+          },
+          {
+            "id": "2928652606",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "28153844"
+              },
+              "isbn": "1782392394",
+              "isbn13": "9781782392392",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "65"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.G6Yq32lMiYEnFKHjaadinA",
+              "title": "Daughter of Eden (Dark Eden, #3)",
+              "title_without_series": "Daughter of Eden",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449672020l/28153844._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449672020l/28153844._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/28153844-daughter-of-eden",
+              "num_pages": "400",
+              "format": "Hardcover",
+              "edition_information": "",
+              "publisher": "Corvus",
+              "publication_day": "6",
+              "publication_year": "2016",
+              "publication_month": "10",
+              "average_rating": "3.99",
+              "ratings_count": "775",
+              "description": "Angie Redlantern is the first to spot the boats - five abreast with men in metal masks and spears standing proud, ready for the fight to come. As the people of New Earth declare war on the people of Mainground, a dangerous era has dawned for Eden. After generations of division and disagreement, the two populations of Eden have finally broken their tentative peace, giving way to bloodshed and slaughter. Angie must flee with her family across the pitch black of Snowy Dark to the place where it all started, the stone circle where the people from Earth first landed, where the story of Gela - the mother of them all - began.<br /><br />It is there that Angie witnesses the most extraordinary event, one that will change the history of Eden forever. It will alter their future and re-shape their past. It is both a beginning and an ending.<br /><br />It is the true story of Eden.",
+              "authors": {
+                "author": {
+                  "id": "541994",
+                  "name": "Chris Beckett",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1364887263p5/541994.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1364887263p2/541994.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/541994.Chris_Beckett",
+                  "average_rating": "3.79",
+                  "ratings_count": "13307",
+                  "text_reviews_count": "1737"
+                }
+              },
+              "published": "2016",
+              "work": {
+                "id": "48167452",
+                "uri": "kca://work/amzn1.gr.work.v1.z-CHPoOD-bHG4txTQRKTfA"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2574934900",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Wed Aug 07 19:31:48 -0700 2019",
+            "date_updated": "Wed Aug 07 19:31:49 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2928652606",
+            "link": "https://www.goodreads.com/review/show/2928652606",
+            "owned": "0"
+          },
+          {
+            "id": "2926402244",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "40524312"
+              },
+              "isbn": "0735220174",
+              "isbn13": "9780735220171",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "1932"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.mtSGsd_Fr77JGlzCUjDT-w",
+              "title": "Black Leopard, Red Wolf (The Dark Star Trilogy, #1)",
+              "title_without_series": "Black Leopard, Red Wolf",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1538656386l/40524312._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1538656386l/40524312._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/40524312-black-leopard-red-wolf",
+              "num_pages": "620",
+              "format": "Hardcover",
+              "edition_information": "",
+              "publisher": "Riverhead Books",
+              "publication_day": "5",
+              "publication_year": "2019",
+              "publication_month": "2",
+              "average_rating": "3.51",
+              "ratings_count": "8323",
+              "description": "In the first novel in Marlon James's Dark Star trilogy, myth, fantasy, and history come together to explore what happens when a mercenary is hired to find a missing child. <br /><br />Tracker is known far and wide for his skills as a hunter: \"He has a nose,\" people say. Engaged to track down a mysterious boy who disappeared three years earlier, Tracker breaks his own rule of always working alone when he finds himself part of a group that comes together to search for the boy. The band is a hodgepodge, full of unusual characters with secrets of their own, including a shape-shifting man-animal known as Leopard.<br /><br />Drawing from African history and mythology and his own rich imagination, Marlon James has written an adventure that's also an ambitious, involving read. Defying categorization and full of unforgettable characters, Black Leopard, Red Wolf explores the fundamentals of truths, the limits of power, the excesses of ambition, and our need to understand them all.",
+              "authors": {
+                "author": {
+                  "id": "56064",
+                  "name": "Marlon James",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1546528568p5/56064.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1546528568p2/56064.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/56064.Marlon_James",
+                  "average_rating": "3.89",
+                  "ratings_count": "42163",
+                  "text_reviews_count": "7337"
+                }
+              },
+              "published": "2019",
+              "work": {
+                "id": "48215793",
+                "uri": "kca://work/amzn1.gr.work.v1.tJJjadZdAgEAonlAkeyG1Q"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2572694160",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Tue Aug 06 06:48:35 -0700 2019",
+            "date_updated": "Tue Aug 06 06:48:36 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2926402244",
+            "link": "https://www.goodreads.com/review/show/2926402244",
+            "owned": "0"
+          },
+          {
+            "id": "2926401414",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "42036965"
+              },
+              "isbn": "1542042836",
+              "isbn13": "9781542042833",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "31"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.-cwfqvbWT2n76bJSxnTUbg",
+              "title": "One Word Kill (Impossible Times, #1)",
+              "title_without_series": "One Word Kill",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543429629l/42036965._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543429629l/42036965._SX50_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/42036965-one-word-kill",
+              "num_pages": "204",
+              "format": "Hardcover",
+              "edition_information": "",
+              "publisher": "47North",
+              "publication_day": "1",
+              "publication_year": "2019",
+              "publication_month": "5",
+              "average_rating": "3.79",
+              "ratings_count": "9551",
+              "description": "<b><i>Ready Player One</i> meets <i>Stranger Things</i> in this new novel by the bestselling author who George RR Martin describes as “an excellent writer.”</b><br /><br />In January 1986, fifteen-year-old boy-genius Nick Hayes discovers he’s dying. And it isn’t even the strangest thing to happen to him that week.<br /><br />Nick and his Dungeons &amp; Dragons-playing friends are used to living in their imaginations. But when a new girl, Mia, joins the group and reality becomes weirder than the fantasy world they visit in their weekly games, none of them are prepared for what comes next. A strange—yet curiously familiar—man is following Nick, with abilities that just shouldn’t exist. And this man bears a cryptic message: Mia’s in grave danger, though she doesn’t know it yet. She needs Nick’s help—now.<br /><br />He finds himself in a race against time to unravel an impossible mystery and save the girl. And all that stands in his way is a probably terminal disease, a knife-wielding maniac and the laws of physics.<br /><br />Challenge accepted.",
+              "authors": {
+                "author": {
+                  "id": "4721536",
+                  "name": "Mark  Lawrence",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1318781585p5/4721536.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1318781585p2/4721536.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/4721536.Mark_Lawrence",
+                  "average_rating": "4.12",
+                  "ratings_count": "301225",
+                  "text_reviews_count": "23441"
+                }
+              },
+              "published": "2019",
+              "work": {
+                "id": "61521749",
+                "uri": "kca://work/amzn1.gr.work.v1.1wDqpeq6fNDABMpXAL74LA"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2572693307",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Tue Aug 06 06:47:52 -0700 2019",
+            "date_updated": "Tue Aug 06 06:47:53 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2926401414",
+            "link": "https://www.goodreads.com/review/show/2926401414",
+            "owned": "0"
+          },
+          {
+            "id": "2926397962",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "37562956"
+              },
+              "isbn": {
+                "_nil": "true"
+              },
+              "isbn13": {
+                "_nil": "true"
+              },
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "126"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.JswOY1V3_HP0RzB9_rr7hg",
+              "title": "Dark Age (Red Rising Saga #5)",
+              "title_without_series": "Dark Age",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525464466l/37562956._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525464466l/37562956._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/37562956-dark-age",
+              "num_pages": "784",
+              "format": "",
+              "edition_information": "",
+              "publisher": "",
+              "publication_day": "30",
+              "publication_year": "2019",
+              "publication_month": "7",
+              "average_rating": "4.53",
+              "ratings_count": "6237",
+              "description": "<b>The #1 <i>New York Times</i> bestselling author of <i>Morning Star</i> returns to the Red Rising universe with the thrilling sequel to <i>Iron Gold</i>.</b><br /><br />For a decade Darrow led a revolution against the corrupt color-coded Society. Now, outlawed by the very Republic he founded, he wages a rogue war on Mercury in hopes that he can still salvage the dream of Eo. But as he leaves death and destruction in his wake, is he still the hero who broke the chains? Or will another legend rise to take his place?<br /><br />Lysander au Lune, the heir in exile, has returned to the Core. Determined to bring peace back to mankind at the edge of his sword, he must overcome or unite the treacherous Gold families of the Core and face down Darrow over the skies of war-torn Mercury. <br /><br />But theirs are not the only fates hanging in the balance.<br /><br />On Luna, Mustang, Sovereign of the Republic, campaigns to unite the Republic behind her husband. Beset by political and criminal enemies, can she outwit her opponents in time to save him? <br /><br />Once a Red refugee, young Lyria now stands accused of treason, and her only hope is a desperate escape with unlikely new allies.<br /><br />Abducted by a new threat to the Republic, Pax and Electra, the children of Darrow and Sevro, must trust in Ephraim, a thief, for their salvation—and Ephraim must look to them for his chance at redemption.<br /><br />As alliances shift, break, and re-form—and power is seized, lost, and reclaimed—every player is at risk in a game of conquest that could turn the Rising into a new Dark Age.",
+              "authors": {
+                "author": {
+                  "id": "6474348",
+                  "name": "Pierce Brown",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1417558860p5/6474348.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1417558860p2/6474348.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/6474348.Pierce_Brown",
+                  "average_rating": "4.36",
+                  "ratings_count": "477799",
+                  "text_reviews_count": "47834"
+                }
+              },
+              "published": "2019",
+              "work": {
+                "id": "49464237",
+                "uri": "kca://work/amzn1.gr.work.v1.EPUUWtRWjpsIYJFmvn6Q5Q"
+              }
+            },
+            "rating": "4",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_name": "read",
+                "_exclusive": "true",
+                "_id": "5959171",
+                "_review_shelf_id": ""
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "Sun Aug 11 14:30:22 -0700 2019",
+            "read_at": "Tue Sep 17 13:26:20 -0700 2019",
+            "date_added": "Tue Aug 06 06:44:56 -0700 2019",
+            "date_updated": "Tue Sep 17 13:26:20 -0700 2019",
+            "read_count": "1",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2926397962",
+            "link": "https://www.goodreads.com/review/show/2926397962",
+            "owned": "0"
+          },
+          {
+            "id": "2922302160",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "25385429"
+              },
+              "isbn": {
+                "_nil": "true"
+              },
+              "isbn13": {
+                "_nil": "true"
+              },
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "3"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.NDZM1UlOAupdw_kSuMQL1w",
+              "title": "Mother of Eden (Dark Eden, #2)",
+              "title_without_series": "Mother of Eden",
+              "image_url": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+              "small_image_url": "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/25385429-mother-of-eden",
+              "num_pages": "",
+              "format": "",
+              "edition_information": "",
+              "publisher": "",
+              "publication_day": "",
+              "publication_year": "",
+              "publication_month": "",
+              "average_rating": "3.79",
+              "ratings_count": "1580",
+              "description": "We speak of a mother's love, but we forget her power. Power over life. Power to give and to withhold.'<br />Generations after the breakup of the human family of Eden, the Johnfolk emphasise knowledge and innovation, the Davidfolk tradition and cohesion. But both have built hierarchical societies sustained by violence and dominated by men - and both claim to be the favoured children of a long-dead woman from Earth that all Eden knows as Gela, the mother of them all.<br />When Starlight Brooking meets a handsome and powerful man from across Worldpool, she believes he will offer an outlet for her ambition and energy. But she has no idea that she will be a stand-in for Gela herself, and wear Gela's ring on her own finger.<br />And she has no idea of the enemies she will make, no inkling that a time will come when she, like John Redlantern, will choose to kill...",
+              "authors": {
+                "author": {
+                  "id": "541994",
+                  "name": "Chris Beckett",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1364887263p5/541994.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1364887263p2/541994.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/541994.Chris_Beckett",
+                  "average_rating": "3.79",
+                  "ratings_count": "13307",
+                  "text_reviews_count": "1737"
+                }
+              },
+              "published": "",
+              "work": {
+                "id": "40752165",
+                "uri": "kca://work/amzn1.gr.work.v1.BscvIWJPZhXkmasA_PNSfQ"
+              }
+            },
+            "rating": "4",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_name": "read",
+                "_exclusive": "true",
+                "_id": "5959171",
+                "_review_shelf_id": ""
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "Sat Aug 03 05:18:29 -0700 2019",
+            "read_at": "Sun Aug 11 08:38:26 -0700 2019",
+            "date_added": "Sat Aug 03 05:18:29 -0700 2019",
+            "date_updated": "Sun Aug 11 08:38:26 -0700 2019",
+            "read_count": "1",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2922302160",
+            "link": "https://www.goodreads.com/review/show/2922302160",
+            "owned": "0"
+          },
+          {
+            "id": "2905470670",
+            "book": {
+              "id": {
+                "_type": "integer",
+                "__text": "36229297"
+              },
+              "isbn": "0765391473",
+              "isbn13": "9780765391476",
+              "text_reviews_count": {
+                "_type": "integer",
+                "__text": "85"
+              },
+              "uri": "kca://book/amzn1.gr.book.v1.y6KGZmZCXU56RZ5pim4z-g",
+              "title": "Moon Rising (Luna #3)",
+              "title_without_series": "Moon Rising",
+              "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507051387l/36229297._SX98_.jpg",
+              "small_image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507051387l/36229297._SY75_.jpg",
+              "large_image_url": "",
+              "link": "https://www.goodreads.com/book/show/36229297-moon-rising",
+              "num_pages": "437",
+              "format": "Hardcover",
+              "edition_information": "",
+              "publisher": "Tor Books",
+              "publication_day": "19",
+              "publication_year": "2019",
+              "publication_month": "3",
+              "average_rating": "4.04",
+              "ratings_count": "794",
+              "description": "The continuing saga of the Moon's Five Dragons, already under option from CBS, a fast-paced, intricately plotted space opera pitched as <i>Game of Thrones</i> meets <i>The Expanse</i><br /><br />A hundred years in the future, a war wages between the Five Dragons—five families that control the Moon’s leading industrial companies. Each clan does everything in their power to claw their way to the top of the food chain—marriages of convenience, corporate espionage, kidnapping, and mass assassinations. <br /><br />Through ingenious political manipulation and sheer force of will, Lucas Cortas rises from the ashes of corporate defeat and seizes control of the Moon. The only person who can stop him is a brilliant lunar lawyer, his sister, Ariel.<br /><br />Witness the Dragons' final battle for absolute sovereignty in Ian McDonald's heart-stopping finale to the Luna trilogy.",
+              "authors": {
+                "author": {
+                  "id": "25376",
+                  "name": "Ian McDonald",
+                  "role": "",
+                  "image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1372533252p5/25376.jpg"
+                  },
+                  "small_image_url": {
+                    "_nophoto": "false",
+                    "__cdata": "https://images.gr-assets.com/authors/1372533252p2/25376.jpg"
+                  },
+                  "link": "https://www.goodreads.com/author/show/25376.Ian_McDonald",
+                  "average_rating": "3.83",
+                  "ratings_count": "44964",
+                  "text_reviews_count": "5606"
+                }
+              },
+              "published": "2019",
+              "work": {
+                "id": "57869094",
+                "uri": "kca://work/amzn1.gr.work.v1.dmdufJNNacmSJaCBT8sbZA"
+              }
+            },
+            "rating": "0",
+            "votes": "0",
+            "spoiler_flag": "false",
+            "spoilers_state": "none",
+            "shelves": {
+              "shelf": {
+                "_exclusive": "true",
+                "_id": "934932",
+                "_name": "to-read",
+                "_review_shelf_id": "2551865105",
+                "_sortable": "true"
+              }
+            },
+            "recommended_for": "",
+            "recommended_by": "",
+            "started_at": "",
+            "read_at": "",
+            "date_added": "Sun Jul 21 14:31:10 -0700 2019",
+            "date_updated": "Sun Jul 21 14:31:10 -0700 2019",
+            "read_count": "0",
+            "body": "",
+            "comments_count": "0",
+            "url": "https://www.goodreads.com/review/show/2905470670",
+            "link": "https://www.goodreads.com/review/show/2905470670",
+            "owned": "0"
+          }
+        ]
 
   const {data, errors} = props
 
@@ -374,7 +1116,14 @@ const IndexPage = props => {
             browseMoreHref='/allstars/'
           />
         )}
-        <h2>K-Musicgram</h2>
+        {bookData && (
+          <BookPreviewGrid
+            title='bookfeed'
+            nodes={bookData}
+            browseMoreHref='/allstars/'
+          />
+        )}
+        <h2>musicgram</h2>
         <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
 
     </Layout>

@@ -16,11 +16,11 @@ function ProjectPreviewGrid (props) {
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
+      {/* {props.browseMoreHref && (
         <div>
           <Link to={props.browseMoreHref}>Browse more</Link>
         </div>
-      )}
+      )} */}
     </div>
   )
 }

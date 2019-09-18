@@ -13,7 +13,7 @@ function StarPreview (props) {
     <div>
  
       
-      <Card as='a' fluid href={props.url}
+      <Card as='a' fluid href={props.url} target='_new'
         style={{minHeight:'220px', maxHeight:'220px', marginBottom:'20px'}}>
       {/* <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
