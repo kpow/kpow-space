@@ -1,10 +1,10 @@
-import {Link} from 'gatsby'
 import React from 'react'
-import ProjectPreview from './project-preview'
+import StarPreview from './star-preview'
 
 import styles from './project-preview-grid.module.css'
 
-function ProjectPreviewGrid (props) {
+function StarPreviewGrid (props) {
+
   return (
     <div className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
@@ -12,23 +12,18 @@ function ProjectPreviewGrid (props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <ProjectPreview {...node} />
+              <StarPreview {...node} />
             </li>
-          ))}
+          ))} 
       </ul>
-      {props.browseMoreHref && (
-        <div>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
-      )}
     </div>
   )
 }
 
-ProjectPreviewGrid.defaultProps = {
+StarPreviewGrid.defaultProps = {
   title: '',
   nodes: [],
   browseMoreHref: ''
 }
 
-export default ProjectPreviewGrid
+export default StarPreviewGrid
