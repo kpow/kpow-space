@@ -44,7 +44,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
           allbooks
         </Menu.Item>
         <Menu.Item>
-          <a href='https://instagram.com/kpow_musicgram'>insta</a>
+          <a href='https://kpow.com'>resume</a>
         </Menu.Item>
       </Container>
     </Menu>
