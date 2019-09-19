@@ -10,24 +10,28 @@ function BookPreview (props) {
   return (
  <div>
 
-<Card as='a' fluid href={props.link} target="_new">
+<Card as='a' 
+      href={props.book.link._text} 
+      fluid 
+      target="_new"
+      style={{minHeight:'150px', maxHeight:'150px', marginBottom:'20px'}}
+>
 <Card.Content>
   <Image
     floated='right'
-    wrapped
-    size='small'
-    spaced='left'
-    src={props.book.image_url}
+    size='tiny'
+    src={props.book.image_url._text}
   />
-  <Card.Header>{props.book.title_without_series}</Card.Header>
-  <Card.Meta><strong>Published:</strong>{props.book.published}</Card.Meta>
-  <Card.Meta><strong>Author:</strong>{props.book.authors.author.name}</Card.Meta>
-  <Card.Meta><strong>Avg. Rating:</strong>{props.book.average_rating}</Card.Meta>
-  <Card.Meta><strong>Status:</strong>{props.shelves.shelf._name}</Card.Meta>
+  <Card.Header>{props.book.title_without_series._text}</Card.Header>
+  <Card.Meta><strong>Published: </strong>{props.book.published._text}</Card.Meta>
+  <Card.Meta><strong>Author: </strong>{props.book.authors.author.name._text}</Card.Meta>
+  <Card.Meta><strong>Avg. Rating: </strong>{props.book.average_rating._text}</Card.Meta>
+  <Card.Meta><strong>Kpow Rating: </strong>{props.rating._text}</Card.Meta>
 
-  <Card.Description>
-    <div dangerouslySetInnerHTML={{__html: props.book.description}} />
-  </Card.Description>
+
+  {/* <Card.Description>
+    <div dangerouslySetInnerHTML={{__html: props.book.description._text}} />
+  </Card.Description> */}
 </Card.Content>
 </Card>
 

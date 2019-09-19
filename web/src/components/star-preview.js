@@ -8,13 +8,9 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 import styles from './star-preview.module.css'
 
 function StarPreview (props) {
-  console.log(props);
   return (
-    <div>
- 
-      
       <Card as='a' fluid href={props.url} target='_new'
-        style={{minHeight:'220px', maxHeight:'220px', marginBottom:'20px'}}>
+        style={{minHeight:'240px', maxHeight:'240px', marginBottom:'20px'}}>
       {/* <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -36,8 +32,6 @@ function StarPreview (props) {
         </Card.Description>
       </Card.Content>
     </Card>  
-
-    </div>
   )
 }
 
