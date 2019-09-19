@@ -3,6 +3,8 @@ import {
   Container,Grid,Header,Image,List,Segment,
 } from 'semantic-ui-react';
 
+const headShot = require('../static/headshot.png')
+
 
 const Footer = ({}) => (
       <Segment inverted vertical style={{ padding: '5em 0em'}}>
@@ -13,7 +15,7 @@ const Footer = ({}) => (
                 <Header inverted as='h4' content='Built with' />
                 <List link inverted>
                 <List.Item>
-                  Still nailing down this part :)
+                  I'm using Gatsby.js/React for static site generation, hosted on Netlify, Sanity.io for the CMS. I'm using the GoodReads API, Feedbin API and Instagram.
                 </List.Item>
                 </List>
               </Grid.Column>
@@ -26,7 +28,7 @@ const Footer = ({}) => (
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
-                <Image src='https://graph.facebook.com/1169805863/picture' floated='left' verticalAlign='bottom'/>
+                <Image src={headShot} floated='left' verticalAlign='bottom'/>
                 <Header as='h4' inverted subheader='Kevin Power' content='About Kpow' style={{ margin:0, marginBottom:'30px'}}/>
 
                 <p>Interwebz wrangler. at <a href='https://mobelux.com'>Mobelux</a>. Voracious reader and  dad extraordinaire. Music, Travel, Poker, Pugs, and Pixels.</p>
