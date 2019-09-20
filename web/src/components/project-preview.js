@@ -14,7 +14,7 @@ function ProjectPreview (props) {
  
  
       <Card fluid
-        style={{minHeight:'350px', maxHeight:'350px', marginBottom:'20px'}}>
+        style={{minHeight:'365px', maxHeight:'365px', marginBottom:'20px'}}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
