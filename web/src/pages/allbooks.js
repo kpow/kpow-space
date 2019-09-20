@@ -4,7 +4,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BookPreviewGrid from '../components/book-preview-grid'
 import Layout from '../containers/layout'
-import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
+import {mapEdgesToNodes, filterOutToRead} from '../lib/helpers'
 import axios from 'axios'
 import convert from 'xml-js'
 
@@ -48,13 +48,15 @@ class AllbooksPage extends React.Component {
 
   componentDidMount() {
       console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=30&page=1')
+      axios.get('https://services.kpow.com/books.php?perPage=60&page=1')
       .then((response) => {
-        let json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
-        let bookData = json.GoodreadsResponse.reviews.review;
+        const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
+        const bookData = json.GoodreadsResponse.reviews.review;
+        const bookNodes = bookData.filter(filterOutToRead).slice(0,30)        
+
         this.setState({
           booksLoaded: true,
-          books: bookData
+          books: bookNodes
         });
       })
       .catch((error) => {

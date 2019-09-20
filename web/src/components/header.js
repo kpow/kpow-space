@@ -37,13 +37,16 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
             </span>
           </h1>
         </Menu.Item>
-        {/* <Menu.Item position='right' as={Link} to='/allstars/'>
-          allstars
+        <Menu.Item position='right' as={Link} to='/archive/'>
+          projects
         </Menu.Item>
         <Menu.Item as={Link} to='/allbooks/'>
-          allbooks
-        </Menu.Item> */}
-        <Menu.Item  position='right'>
+          books
+        </Menu.Item>
+        <Menu.Item as={Link} to='/allstars/'>
+          stars
+        </Menu.Item>
+        <Menu.Item >
           <a href='https://www.visualcv.com/kevin-power/' target='_new'>resume</a>
         </Menu.Item>
       </Container>

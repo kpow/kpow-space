@@ -13,6 +13,15 @@ export function filterOutDocsWithoutSlugs ({slug}) {
   return (slug || {}).current
 }
 
+export function filterOutToRead (data) {
+  try {
+    if(data.shelves.shelf._attributes.name!='to-read') 
+      return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export function filterOutDocsPublishedInTheFuture ({publishedAt}) {
   return !isFuture(publishedAt)
 }

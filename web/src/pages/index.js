@@ -3,7 +3,8 @@ import {graphql} from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
+  filterOutDocsPublishedInTheFuture,
+  filterOutToRead
 } from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -14,6 +15,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
 import axios from 'axios'
+import {Button, Icon} from 'semantic-ui-react'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -81,13 +83,15 @@ class IndexPage extends React.Component {
   componentDidMount() {
  
     console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=6&page=1')
+      axios.get('https://services.kpow.com/books.php?perPage=24&page=1')
       .then((response) => {
-        let json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
-        let bookData = json.GoodreadsResponse.reviews.review;
+        const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
+        const bookData = json.GoodreadsResponse.reviews.review;
+        const bookNodes = bookData.filter(filterOutToRead).slice(0,6)        
+        
         this.setState({
           booksLoaded: true,
-          books: bookData
+          books: bookNodes
         });
       })
       .catch((error) => {
@@ -179,8 +183,26 @@ class IndexPage extends React.Component {
           <h2>musicgram</h2>
           <h4>I love live music, and collecting clips of it on Instagram :)</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
-          <div className="ui horizontal divider">0101010</div>
-       
+          <div>
+         
+           <Button 
+              as='a' 
+              animated 
+              floated='right'
+              href='https://instagram.com/kpow_musicgram'
+              style={{marginTop:'8px'}}
+              target='_new'
+              color='blue'
+            >
+            <Button.Content visible>View on IG</Button.Content>
+            <Button.Content hidden>
+              <Icon name='arrow right' />
+            </Button.Content>
+          </Button>
+         
+          </div>
+          <div  style={{marginBottom:'24px'}} className="ui horizontal divider">0101010</div>
+            
         </Layout>
       );
     }
