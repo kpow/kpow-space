@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import BookPreview from './book-preview'
-import {Container, Button} from 'semantic-ui-react'
+import {Container, Button, Icon} from 'semantic-ui-react'
 import styles from './book-preview-grid.module.css'
 
 function BookPreviewGrid (props) {
@@ -17,24 +18,18 @@ function BookPreviewGrid (props) {
             </li>
           ))} 
       </ul>
-      {/*<Container style={{marginBottom:'40px'}} >
-        <Button.Group
-          compact
-          size="medium"
-          style={{ float: 'right', paddingTop: '15px', marginBottom: '15px' }}>
-          <Button
-            onClick={nextPage}
-            labelPosition="left"
-            icon="left chevron"
-            content="Prev"
-          />
-          <Button
-            labelPosition="right"
-            icon="right chevron"
-            content="Next"
-          />
-        </Button.Group>
-          </Container>*/}
+      {props.browseMoreHref && (
+          <div>
+          <Link to={props.browseMoreHref}>
+           <Button animated floated='right'>
+            <Button.Content visible>Browse More</Button.Content>
+            <Button.Content hidden>
+              <Icon name='arrow right' />
+            </Button.Content>
+          </Button>
+          </Link>
+        </div>
+      )}  
     </div>
   )
 }

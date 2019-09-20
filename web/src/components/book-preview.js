@@ -7,6 +7,13 @@ import styles from './book-preview.module.css'
 
 function BookPreview (props) {
   console.log(props);
+  let shelf;
+  try {
+    shelf = props.shelves.shelf._attributes.name
+  } catch (error) {
+    shelf = 'unknown'
+  }
+
   return (
  <div>
 
@@ -18,23 +25,44 @@ function BookPreview (props) {
 >
 <Card.Content>
 
+{shelf == 'currently-reading' && ( 
   <Image
     floated='right'
     size='tiny'
     src={props.book.image_url._text}
+    label={{
+      color: 'purple',
+      content:shelf,
+      ribbon: 'right',
+    }}
   />
+)}
+
+{shelf != 'currently-reading' && (
+  <Image
+    floated='right'
+    size='tiny'
+    src={props.book.image_url._text}
+    label={{
+      color: 'teal',
+      content:shelf,
+      ribbon: 'right',
+    }}
+  />
+)}
  
   <Card.Header>{props.book.title_without_series._text}</Card.Header>
   <Card.Meta><strong>Author: </strong>{props.book.authors.author.name._text}</Card.Meta>
+  <Card.Meta><strong>Published: </strong>{props.book.published._text}</Card.Meta>
   <Card.Meta><strong>Avg. Rating: </strong>
     <Rating defaultRating={props.book.average_rating._text} maxRating={5} disabled />
   </Card.Meta>
   <Card.Meta><strong>My Rating: </strong>
     <Rating defaultRating={props.rating._text} maxRating={5} disabled />
   </Card.Meta>
-  <Label color='teal' ribbon='right'>
+  {/* <Label color='teal' ribbon='right'>
     {props.shelves.shelf._attributes.name}
-  </Label>
+  </Label> */}
 
   {/* <Card.Description>
     <div dangerouslySetInnerHTML={{__html: props.book.description._text}} />

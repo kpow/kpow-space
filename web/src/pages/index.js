@@ -64,10 +64,6 @@ export const query = graphql`
 `
 
 
-
-
-
-
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +81,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
  
     console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=9&page=1')
+      axios.get('https://services.kpow.com/books.php?perPage=6&page=1')
       .then((response) => {
         let json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         let bookData = json.GoodreadsResponse.reviews.review;
@@ -100,7 +96,7 @@ class IndexPage extends React.Component {
       .finally(() => { });
 
     console.log("getjson");
-    axios.get('https://services.kpow.com/stars.php?page=' + 1 + '&perPage=9')
+    axios.get('https://services.kpow.com/stars.php?page=' + 1 + '&perPage=6')
     .then((response) => {
       let starData = response.data.reverse();
       this.setState({
@@ -181,7 +177,7 @@ class IndexPage extends React.Component {
           )}
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
-          <h4>I love live music, and collecting clips on instagram :)</h4>
+          <h4>I love live music, and collecting clips of it on Instagram :)</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
           <div className="ui horizontal divider">0101010</div>
        

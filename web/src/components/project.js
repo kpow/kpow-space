@@ -6,11 +6,11 @@ import {imageUrlFor} from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
-import { Grid, Image, Header, Divider } from 'semantic-ui-react'
+import { Grid, Button, Icon, Header, Divider } from 'semantic-ui-react'
 import styles from './project.module.css'
 
 function Project (props) {
-  const {_rawBody, title, categories, mainImage, members, publishedAt, relatedProjects} = props
+  const {_rawBody, title, categories, mainImage, members, url, publishedAt, relatedProjects} = props
   return (
     <>
     <Divider horizontal>0101010</Divider>
@@ -45,6 +45,21 @@ function Project (props) {
                 </ul>
               </div>
           )}
+
+         
+          
+          {url && (
+            <>
+            <Divider horizontal>~</Divider>
+            <Button as='a' target='_new' href={url} animated fluid>
+              <Button.Content visible>View Project</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' />
+              </Button.Content>
+            </Button>
+            </>
+          )}
+          
     </Grid.Column>
     </Grid>
     </article>

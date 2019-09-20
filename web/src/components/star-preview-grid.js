@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import StarPreview from './star-preview'
+import {Button, Icon} from 'semantic-ui-react'
 
 import styles from './project-preview-grid.module.css'
 
@@ -17,6 +19,20 @@ function StarPreviewGrid (props) {
             </li>
           ))} 
       </ul>
+            
+      {props.browseMoreHref && (
+          <div>
+          <Link to={props.browseMoreHref}>
+           <Button animated floated='right'>
+            <Button.Content visible>Browse More</Button.Content>
+            <Button.Content hidden>
+              <Icon name='arrow right' />
+            </Button.Content>
+          </Button>
+          </Link>
+        </div>
+      )}    
+
     </div>
   )
 }
