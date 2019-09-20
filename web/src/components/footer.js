@@ -31,7 +31,7 @@ const Footer = ({}) => (
                 <Image src={headShot} floated='left' verticalAlign='bottom'/>
                 <Header as='h4' inverted subheader='Kevin Power' content='About Kpow' style={{ margin:0, marginBottom:'30px'}}/>
 
-                <p>Digital Architect/Leader/Maker. Voracious reader and  dad extraordinaire. Music, Travel, Poker, Pugs, and Pixels.</p>
+                <p>Digital Architect/Leader/Maker. Voracious reader and enamored dad. Music, Travel, Poker, Pugs, and Pixels.</p>
                 <p>Beginning to form my <a href='https://en.wikipedia.org/wiki/Technological_singularity'>post-singularity</a> self with this website.</p>
 
               </Grid.Column>

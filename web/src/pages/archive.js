@@ -7,8 +7,6 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
 
-import {responsiveTitle1} from '../components/typography.module.css'
-
 export const query = graphql`
   query ArchivePageQuery {
     projects: allSanityProject(
@@ -47,12 +45,19 @@ const ArchivePage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
-  return (
+ 
+    return (
     <Layout>
       <SEO title='Archive' />
+      <div className="ui horizontal divider">0101010</div>
+
       <Container>
-        <h1 className={responsiveTitle1}>Projects</h1>
-        {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+        {projectNodes && projectNodes.length > 0 && 
+        <ProjectPreviewGrid 
+          nodes={projectNodes}
+          title='k-projects archive'
+        />
+        }
       </Container>
     </Layout>
   )

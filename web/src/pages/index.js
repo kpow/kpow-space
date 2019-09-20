@@ -85,7 +85,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
  
     console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?page=1')
+      axios.get('https://services.kpow.com/books.php?perPage=9&page=1')
       .then((response) => {
         let json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         let bookData = json.GoodreadsResponse.reviews.review;
@@ -131,6 +131,7 @@ class IndexPage extends React.Component {
       .filter(filterOutDocsPublishedInTheFuture)
     : []
 
+    
     if (errors) {
       return (
         <Layout>
@@ -151,7 +152,7 @@ class IndexPage extends React.Component {
       return (
         <Layout>
           <SEO title={site.title} description={site.description} keywords={site.keywords} />
-          <div class="ui horizontal divider">0101010</div>
+          <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
             <ProjectPreviewGrid
               title='k-projects'
@@ -159,7 +160,7 @@ class IndexPage extends React.Component {
               browseMoreHref='/archive/'
             />
           )}
-          <div class="ui horizontal divider">0101010</div>
+          <div className="ui horizontal divider">0101010</div>
           {books && (
             
             <BookPreviewGrid
@@ -170,7 +171,7 @@ class IndexPage extends React.Component {
             />
             
           )}
-          <div class="ui horizontal divider">0101010</div>
+          <div className="ui horizontal divider">0101010</div>
           {stars && (
             <StarPreviewGrid
               title='starfeed'
@@ -178,11 +179,11 @@ class IndexPage extends React.Component {
               browseMoreHref='/allstars/'
             />
           )}
-          <div class="ui horizontal divider">0101010</div>
+          <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
           <h4>I love live music, and collecting clips on instagram :)</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
-          <div class="ui horizontal divider">0101010</div>
+          <div className="ui horizontal divider">0101010</div>
        
         </Layout>
       );
