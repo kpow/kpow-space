@@ -64,6 +64,11 @@ export default {
       type: 'projectPortableText'
     },
     {
+      name: 'url',
+      title: 'Link',
+      type: 'url'
+    },
+    {
       name: 'relatedProjects',
       title: 'Related projects',
       type: 'array',
