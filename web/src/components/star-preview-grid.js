@@ -8,6 +8,7 @@ function StarPreviewGrid (props) {
   return (
     <div className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
+      <h4>Here are some of the articles I've collected from all my feeds :)</h4>
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => (

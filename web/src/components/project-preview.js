@@ -14,7 +14,7 @@ function ProjectPreview (props) {
  
  
       <Card fluid
-        style={{minHeight:'370px', maxHeight:'400px', marginBottom:'20px'}}>
+        style={{minHeight:'350px', maxHeight:'350px', marginBottom:'20px'}}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -29,7 +29,7 @@ function ProjectPreview (props) {
       <Card.Content>
         <Card.Header>{props.title}</Card.Header>
         <Card.Meta>
-          <span className='date'>Joined in 2015</span>
+          {/* <span className='date'>Joined in 2015</span> */}
         </Card.Meta>
         <Card.Description>
           <BlockText blocks={props._rawExcerpt} />

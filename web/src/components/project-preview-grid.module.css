@@ -5,6 +5,13 @@
   
 }
 
+h4{
+  margin-top: 0 !important;
+}
+h2{
+  margin-bottom: 8px !important;
+}
+
 .grid {
   margin: 0;
   padding: 0;
