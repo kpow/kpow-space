@@ -9,7 +9,7 @@ function BookPreviewGrid (props) {
   return (
     <div className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
-      <h4>I have a "thing" for science fiction. Here is a list of books I've read or will read :)</h4>
+      <h4>I have a "thing" for science fiction. Here is m list of books from goodreads :)</h4>
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => (

@@ -6,7 +6,7 @@ import {imageUrlFor} from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
-import { Grid, Button, Icon, Header, Divider } from 'semantic-ui-react'
+import { Grid, Button, Icon, Header, Divider, Segment } from 'semantic-ui-react'
 import styles from './project.module.css'
 
 function Project (props) {
@@ -28,7 +28,7 @@ function Project (props) {
         </div>
       )}
     <Divider horizontal>~</Divider>
-    <Grid>
+    <Grid stackable columns={2}>
     <Grid.Column width={11}>
       <Header as='h2'>{title}</Header>
       {_rawBody && <BlockContent blocks={_rawBody || []} />}
@@ -45,9 +45,6 @@ function Project (props) {
                 </ul>
               </div>
           )}
-
-         
-          
           {url && (
             <>
             <Divider horizontal>~</Divider>

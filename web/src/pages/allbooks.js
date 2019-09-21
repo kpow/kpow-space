@@ -42,27 +42,32 @@ class AllbooksPage extends React.Component {
     this.state = {
       error: null,
       booksLoaded: false,
-      books: []
+      books: [],
+      page:1
     };
   }
 
-  componentDidMount() {
-      console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=60&page=1')
+  getBookData(page=1){
+    console.log('getbooksjson');
+      axios.get('https://services.kpow.com/books.php?perPage=9&page='+page)
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         const bookData = json.GoodreadsResponse.reviews.review;
-        const bookNodes = bookData.filter(filterOutToRead).slice(0,30)        
 
         this.setState({
           booksLoaded: true,
-          books: bookNodes
+          books: bookData
         });
       })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => { });
+  }
+
+  componentDidMount() {
+      console.log('getbooksjson');
+      this.getBookData();
   }
 
   render() {
