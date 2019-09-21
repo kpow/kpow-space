@@ -49,7 +49,7 @@ class AllbooksPage extends React.Component {
 
   getBookData(page=1){
     console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=9&page='+page)
+      axios.get('https://services.kpow.com/books.php?perPage=18&page='+page)
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         const bookData = json.GoodreadsResponse.reviews.review;
@@ -58,6 +58,7 @@ class AllbooksPage extends React.Component {
           booksLoaded: true,
           books: bookData
         });
+
       })
       .catch((error) => {
         console.log(error);
