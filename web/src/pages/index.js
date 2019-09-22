@@ -15,7 +15,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
 import axios from 'axios'
-import {Button, Icon} from 'semantic-ui-react'
+import {Button, Icon, Responsive} from 'semantic-ui-react'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -152,6 +152,15 @@ class IndexPage extends React.Component {
       return (
         <Layout>
           <SEO title={site.title} description={site.description} keywords={site.keywords} />
+          <Responsive maxWidth={768}>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </Responsive>
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
             <ProjectPreviewGrid

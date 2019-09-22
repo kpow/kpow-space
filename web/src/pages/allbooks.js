@@ -108,7 +108,15 @@ class AllbooksPage extends React.Component {
     } else {
       return (
         <Layout>
-         
+         <Responsive maxWidth={768}>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </Responsive>
           <div className="ui horizontal divider">0101010</div>
           <PrevNextNav 
             pageNumber={this.state.page} 
