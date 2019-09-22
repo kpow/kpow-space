@@ -108,12 +108,24 @@ class AllbooksPage extends React.Component {
     } else {
       return (
         <Layout>
-
-          <div className="ui horizontal divider">0101010</div>
-          <PrevNextNav 
+          <Responsive maxWidth={768}>
+            <PrevNextNav 
             pageNumber={this.state.page} 
             getNext={this.getNext} getPrev={this.getPrev} 
+            size='tiny'
           />
+          </Responsive>
+
+          <div className="ui horizontal divider">0101010</div>
+          
+          <Responsive minWidth={768}>
+            <PrevNextNav 
+            pageNumber={this.state.page} 
+            getNext={this.getNext} getPrev={this.getPrev} 
+            size='medium'
+          />
+          </Responsive>
+          
           {books && (
             <BookPreviewGrid
               title='bookfeed'
@@ -121,13 +133,12 @@ class AllbooksPage extends React.Component {
               nodes={books}
             />
           )}
-           
-              
                 
         <Responsive maxWidth={768}>
           <PrevNextNav 
             pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev} 
+            getNext={this.getNext} getPrev={this.getPrev}
+            size='mini' 
            />
         </Responsive>
         

@@ -36,7 +36,6 @@ export const query = graphql`
   }
 `
 
-
 class AllstarsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +46,6 @@ class AllstarsPage extends React.Component {
       page:1
     };
   }
-
 
   getStarData=(page=1)=>{
     console.log("getjson");
@@ -108,11 +106,23 @@ class AllstarsPage extends React.Component {
       return (
         <Layout>
  
-          <div className="ui horizontal divider">0101010</div>
-          <PrevNextNav 
+          <Responsive maxWidth={768}>
+            <PrevNextNav 
             pageNumber={this.state.page} 
             getNext={this.getNext} getPrev={this.getPrev} 
+            size='tiny'
           />
+          </Responsive>
+
+          <div className="ui horizontal divider">0101010</div>
+          
+          <Responsive minWidth={768}>
+            <PrevNextNav 
+            pageNumber={this.state.page} 
+            getNext={this.getNext} getPrev={this.getPrev} 
+            size='medium'
+          />
+          </Responsive>
           {stars && (
             <StarPreviewGrid
               title='starfeed'
@@ -121,13 +131,25 @@ class AllstarsPage extends React.Component {
             />
           )}
 
+          <Responsive maxWidth={768}>
             <PrevNextNav 
-              pageNumber={this.state.page} 
-              getNext={this.getNext} getPrev={this.getPrev} 
-            />
+            pageNumber={this.state.page} 
+            getNext={this.getNext} getPrev={this.getPrev} 
+            size='tiny'
+          />
+          </Responsive>
 
-         <div className="ui horizontal divider">0101010</div>
-       <br></br>
+          <div className="ui horizontal divider">0101010</div>
+          
+          <Responsive minWidth={768}>
+            <PrevNextNav 
+            pageNumber={this.state.page} 
+            getNext={this.getNext} getPrev={this.getPrev} 
+            size='medium'
+          />
+          </Responsive>
+
+          <br></br>
         </Layout>
       );
     }
