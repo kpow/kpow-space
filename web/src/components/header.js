@@ -9,7 +9,7 @@ import Skull from '../static/skull.svg';
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
   <div className={styles.root}>
 
-    <Menu fixed="top" size="large" inverted compact stackable>
+    <Menu fixed="top" size="large" inverted compact>
       <Container>
         <Menu.Item style={{ padding: '0' }} as={Link} to="/">
           <h1 className="site-logo">

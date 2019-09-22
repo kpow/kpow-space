@@ -152,15 +152,7 @@ class IndexPage extends React.Component {
       return (
         <Layout>
           <SEO title={site.title} description={site.description} keywords={site.keywords} />
-          <Responsive maxWidth={768}>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-          </Responsive>
+
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
             <ProjectPreviewGrid
