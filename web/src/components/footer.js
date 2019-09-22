@@ -6,8 +6,8 @@ import {
 const headShot = require('../static/headshot.png')
 
 
-const Footer = ({}) => (
-      <Segment inverted vertical style={{ padding: '5em 0em'}}>
+const Footer = (props) => (
+      <Segment inverted vertical style={{padding: props.padding}}>
         <Container>
           <Grid divided inverted stackable>
             <Grid.Row>
@@ -15,7 +15,7 @@ const Footer = ({}) => (
                 <Header inverted as='h4' content='Built with' />
                 <List link inverted>
                 <List.Item>
-                  I'm using Gatsby for static site generation and React for the front-end. The site deploys from Github using a CI pipeline. I'm using the GoodReads API, Feedbin API and Instagram.
+                  I'm using Gatsby for static site generation and React for the front-end. The site deploys to Netlify from Github using a CI pipeline. I'm using the GoodReads API, Feedbin API and Instagram.
                 </List.Item>
                 </List>
               </Grid.Column>

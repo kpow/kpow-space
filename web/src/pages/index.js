@@ -25,7 +25,7 @@ export const query = graphql`
       keywords
     }
     projects: allSanityProject(
-      limit: 6
+      limit: 3
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
@@ -87,7 +87,7 @@ class IndexPage extends React.Component {
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         const bookData = json.GoodreadsResponse.reviews.review;
-        const bookNodes = bookData.filter(filterOutToRead).slice(0,6)        
+        const bookNodes = bookData.filter(filterOutToRead).slice(0,3)        
         
         this.setState({
           booksLoaded: true,
@@ -100,7 +100,7 @@ class IndexPage extends React.Component {
       .finally(() => { });
 
     console.log("getjson");
-    axios.get('https://services.kpow.com/stars.php?page=' + 1 + '&perPage=6')
+    axios.get('https://services.kpow.com/stars.php?page=' + 1 + '&perPage=3')
     .then((response) => {
       let starData = response.data.reverse();
       this.setState({

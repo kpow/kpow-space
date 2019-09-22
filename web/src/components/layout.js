@@ -3,7 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import Helmet from 'react-helmet'
 import {
-  Container
+  Container, Responsive
 } from 'semantic-ui-react';
 
 import '../styles/layout.css'
@@ -22,7 +22,13 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <Container>
       <div className={LayoutStyles.content}>{children}</div>
     </Container>
-    <Footer />
+    <Responsive maxWidth={768}>
+      <Footer padding='0em 0em' />
+    </Responsive>
+    
+    <Responsive minWidth={768}>
+      <Footer padding='5em 0em' />
+    </Responsive>
 
   </>
 )

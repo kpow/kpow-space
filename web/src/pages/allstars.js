@@ -131,6 +131,14 @@ class AllstarsPage extends React.Component {
             />
           )}
 
+          
+          <Responsive minWidth={768}>
+            <PrevNextNav 
+              pageNumber={this.state.page} 
+              getNext={this.getNext} getPrev={this.getPrev} 
+              size='medium'
+            />
+          </Responsive>
           <Responsive maxWidth={768}>
             <PrevNextNav 
             pageNumber={this.state.page} 
@@ -140,14 +148,6 @@ class AllstarsPage extends React.Component {
           </Responsive>
 
           <div className="ui horizontal divider">0101010</div>
-          
-          <Responsive minWidth={768}>
-            <PrevNextNav 
-            pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev} 
-            size='medium'
-          />
-          </Responsive>
 
           <br></br>
         </Layout>
