@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
  
     console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=24&page=1')
+      axios.get('https://services.kpow.com/books.php?perPage=12&page=1')
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         const bookData = json.GoodreadsResponse.reviews.review;
