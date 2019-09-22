@@ -22,6 +22,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <Container>
       <div className={LayoutStyles.content}>{children}</div>
     </Container>
+    
     <Responsive maxWidth={768}>
       <Footer padding='0em 0em' />
     </Responsive>

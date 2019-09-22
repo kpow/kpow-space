@@ -123,15 +123,16 @@ class AllstarsPage extends React.Component {
             size='medium'
           />
           </Responsive>
+
           {stars && (
             <StarPreviewGrid
               title='starfeed'
               subtitle='Here are some of the articles I have collected from all my feeds :)'
+              starsLoaded={starsLoaded}
               nodes={stars}
             />
           )}
-
-          
+      
           <Responsive minWidth={768}>
             <PrevNextNav 
               pageNumber={this.state.page} 

@@ -15,7 +15,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
 import axios from 'axios'
-import {Button, Icon, Responsive} from 'semantic-ui-react'
+import {Button, Icon, Responsive, Segment, Dimmer, Loader} from 'semantic-ui-react'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -163,26 +163,30 @@ class IndexPage extends React.Component {
             />
           )}
           <div className="ui horizontal divider">0101010</div>
+          
           {books && (
-            
             <BookPreviewGrid
               title='bookfeed'
               subtitle='I have a "thing" for science fiction. Here is my list of books from goodreads :)'
               nodes={books}
+              booksLoaded={booksLoaded}
               browseMoreHref='/allbooks/'
               getBooksData={getBooksData}
             />
-            
           )}
+          
           <div className="ui horizontal divider">0101010</div>
+          
           {stars && (
             <StarPreviewGrid
               title='starfeed'
               subtitle='Here are some of the articles I have collected from all my feeds :)'
               nodes={stars}
+              starsLoaded={starsLoaded}
               browseMoreHref='/allstars/'
             />
           )}
+           
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
           <h4>I love live music, and collecting clips of it on Instagram :)</h4>

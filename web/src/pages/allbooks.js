@@ -70,7 +70,8 @@ class AllbooksPage extends React.Component {
   getNext = () => {
     const nextPage = this.state.page+1
     this.setState({
-      page:nextPage
+      page:nextPage,
+      booksLoaded: false,
     })
     this.getBookData(nextPage)
 
@@ -110,10 +111,10 @@ class AllbooksPage extends React.Component {
         <Layout>
           <Responsive maxWidth={768}>
             <PrevNextNav 
-            pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev} 
-            size='tiny'
-          />
+              pageNumber={this.state.page} 
+              getNext={this.getNext} getPrev={this.getPrev} 
+              size='tiny'
+            />
           </Responsive>
 
           <div className="ui horizontal divider">0101010</div>
@@ -125,11 +126,12 @@ class AllbooksPage extends React.Component {
             size='medium'
           />
           </Responsive>
-          
+
           {books && (
             <BookPreviewGrid
               title='bookfeed'
               subtitle='I have a "thing" for science fiction. Here is my list of books from goodreads :)'
+              booksLoaded={booksLoaded}
               nodes={books}
             />
           )}

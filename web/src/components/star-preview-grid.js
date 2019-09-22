@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import StarPreview from './star-preview'
-import {Button, Icon} from 'semantic-ui-react'
+import {Button, Icon, Segment, Dimmer, Loader} from 'semantic-ui-react'
 
 import styles from './project-preview-grid.module.css'
 
@@ -11,14 +11,22 @@ function StarPreviewGrid (props) {
     <div className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
       {props.subtitle && <h4>{props.subtitle}</h4>}
-      <ul className={styles.grid}>
-        {props.nodes &&
-          props.nodes.map(node => (
-            <li key={node.id}>
-              <StarPreview {...node} />
-            </li>
-          ))} 
-      </ul>
+      
+      <Segment basic style={{minHeight:'150px'}}>
+        {!props.starsLoaded && (
+          <Dimmer active inverted>
+              <Loader size='large'>Loading</Loader>
+          </Dimmer> 
+        )}
+        <ul className={styles.grid}>
+            {props.nodes &&
+              props.nodes.map(node => (
+                <li key={node.id}>
+                  <StarPreview {...node} />
+                </li>
+              ))} 
+          </ul>
+      </Segment>
             
       {props.browseMoreHref && (
           <div>
