@@ -50,15 +50,7 @@ const ArchivePage = props => {
     return (
     <Layout>
       <SEO title='Archive' />
-      <Responsive maxWidth={768}>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-          </Responsive>
+
       <div className="ui horizontal divider">0101010</div>
 
       <Container>
