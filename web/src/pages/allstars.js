@@ -54,7 +54,7 @@ class AllstarsPage extends React.Component {
     axios.get('https://services.kpow.com/stars.php?page=' + page + '&perPage=9')
     .then((response) => {
       let starData = response.data.reverse();
-      console.log(starData)
+      if(this.state.page>1)window.scrollTo(0, 0);
       this.setState({
         starsLoaded: true,
         stars: starData,

@@ -6,7 +6,6 @@ import { Card, Icon, Feed, Image, Label, Rating } from 'semantic-ui-react'
 import styles from './book-preview.module.css'
 
 function BookPreview (props) {
-  console.log(props);
   let shelf;
   try {
     shelf = props.shelves.shelf._attributes.name
@@ -60,13 +59,6 @@ function BookPreview (props) {
   <Card.Meta><strong>My Rating: </strong>
     <Rating defaultRating={props.rating._text} maxRating={5} disabled />
   </Card.Meta>
-  {/* <Label color='teal' ribbon='right'>
-    {props.shelves.shelf._attributes.name}
-  </Label> */}
-
-  {/* <Card.Description>
-    <div dangerouslySetInnerHTML={{__html: props.book.description._text}} />
-  </Card.Description> */}
 </Card.Content>
 </Card>
 

@@ -54,7 +54,7 @@ class AllbooksPage extends React.Component {
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
         const bookData = json.GoodreadsResponse.reviews.review;
-
+        if(this.state.page>1)window.scrollTo(0, 0);
         this.setState({
           booksLoaded: true,
           books: bookData
