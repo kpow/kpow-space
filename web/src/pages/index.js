@@ -156,6 +156,7 @@ class IndexPage extends React.Component {
           {projectNodes && (
             <ProjectPreviewGrid
               title='k-projects'
+              subtitle='Here are a few of the projects I have worked on. I have more by request :)'
               nodes={projectNodes}
               browseMoreHref='/archive/'
             />
@@ -165,6 +166,7 @@ class IndexPage extends React.Component {
             
             <BookPreviewGrid
               title='bookfeed'
+              subtitle='I have a "thing" for science fiction. Here is my list of books from goodreads :)'
               nodes={books}
               browseMoreHref='/allbooks/'
               getBooksData={getBooksData}
@@ -175,6 +177,7 @@ class IndexPage extends React.Component {
           {stars && (
             <StarPreviewGrid
               title='starfeed'
+              subtitle='Here are some of the articles I have collected from all my feeds :)'
               nodes={stars}
               browseMoreHref='/allstars/'
             />
