@@ -13,6 +13,7 @@ function BookPreview (props) {
     shelf = 'unknown'
   }
 
+  
   return (
  <div>
 
@@ -37,13 +38,26 @@ function BookPreview (props) {
   />
 )}
 
-{shelf != 'currently-reading' && (
+{shelf == 'read' && (
   <Image
     floated='right'
     size='tiny'
     src={props.book.image_url._text}
     label={{
       color: 'teal',
+      content:shelf,
+      ribbon: 'right',
+    }}
+  />
+)}
+
+{shelf == 'to-read' && (
+  <Image
+    floated='right'
+    size='tiny'
+    src={props.book.image_url._text}
+    label={{
+      color: 'blue',
       content:shelf,
       ribbon: 'right',
     }}
