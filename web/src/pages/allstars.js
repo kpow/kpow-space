@@ -58,6 +58,11 @@ class AllstarsPage extends React.Component {
         starsLoaded: true,
         stars: starData,
       });
+      analytics.track('data-load', {
+        category: 'stars',
+        label: 'page',
+        value: this.state.page
+      })
     })
     .catch((error) => {
       console.log(error);
@@ -129,7 +134,7 @@ class AllstarsPage extends React.Component {
           {stars && (
             <StarPreviewGrid
               title='starfeed'
-              subtitle='Here are some of the articles I have collected from all my feeds :)'
+              subtitle='Some of the articles collected from all my feeds'
               starsLoaded={starsLoaded}
               nodes={stars}
             />

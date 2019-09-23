@@ -1,16 +1,15 @@
-import {Link} from 'gatsby'
-import React from 'react'
-import {cn, buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import BlockText from './block-text'
-import { Card, Icon, Image } from 'semantic-ui-react'
 
+import React from 'react'
+import { Card} from 'semantic-ui-react'
 import styles from './star-preview.module.css'
+
 
 function StarPreview (props) {
   return (
-      <Card as='a' fluid href={props.url} target='_new'
-        style={{minHeight:'240px', maxHeight:'240px', marginBottom:'20px'}}>
+      <Card as='a' 
+            fluid href={props.url} 
+            target='_new'
+            style={{minHeight:'240px', maxHeight:'240px', marginBottom:'20px'}}>
       {/* <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img

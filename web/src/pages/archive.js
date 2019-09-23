@@ -46,7 +46,7 @@ const ArchivePage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
- 
+    
     return (
     <Layout>
       {analytics.page()}

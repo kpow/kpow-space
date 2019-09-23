@@ -61,6 +61,12 @@ class AllbooksPage extends React.Component {
           books: bookData
         });
 
+        analytics.track('data-load', {
+          category: 'books',
+          label: 'page',
+          value: this.state.page
+        })
+
       })
       .catch((error) => {
         console.log(error);
@@ -132,7 +138,7 @@ class AllbooksPage extends React.Component {
           {books && (
             <BookPreviewGrid
               title='bookfeed'
-              subtitle='I have a "thing" for science fiction. Here is my list of books from goodreads :)'
+              subtitle='Here is my list of books - I have a "thing" for science fiction :)'
               booksLoaded={booksLoaded}
               nodes={books}
             />

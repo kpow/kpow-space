@@ -15,7 +15,7 @@ const Footer = (props) => (
                 <Header inverted as='h4' content='Built with' />
                 <List link inverted>
                 <List.Item>
-                  I'm using Gatsby for static site generation and React for the front-end. The site deploys to Netlify from Github using a CI pipeline. I'm using the GoodReads API, Feedbin API and Instagram.
+                  Using Gatsby for static site generation and React for the front-end. Site deploys to Netlify from Github using a CI pipeline. Using the GoodReads API, Feedbin API, and Instagram.
                 </List.Item>
                 </List>
               </Grid.Column>
@@ -31,8 +31,11 @@ const Footer = (props) => (
                 <Image src={headShot} floated='left' verticalAlign='bottom'/>
                 <Header as='h4' inverted subheader='Kevin Power' content='About Kpow' style={{ margin:0, marginBottom:'30px'}}/>
 
-                <p>Digital Architect/Leader/Maker. Voracious reader and enamored dad. Music, Travel, Poker, Pugs, and Pixels.</p>
-                <p>My <a href='https://en.wikipedia.org/wiki/Technological_singularity'>post-singularity</a> self stars here :)</p>
+                  <p>
+                        Digital Architect, Leader and Maker.
+                  <br />Voracious Reader and Enamored Dad. 
+                  <br />Music, Travel, Poker, Pugs, and Pixels.
+                  </p>
 
               </Grid.Column>
               <Grid.Column width={3}>

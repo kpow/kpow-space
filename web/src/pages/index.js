@@ -158,7 +158,7 @@ class IndexPage extends React.Component {
           {projectNodes && (
             <ProjectPreviewGrid
               title='k-projects'
-              subtitle='Here are a few of the projects I have worked on. I have more by request :)'
+              subtitle='A few of the projects I have worked on. I have more by request'
               nodes={projectNodes}
               browseMoreHref='/archive/'
             />
@@ -168,7 +168,7 @@ class IndexPage extends React.Component {
           {books && (
             <BookPreviewGrid
               title='bookfeed'
-              subtitle='I have a "thing" for science fiction. Here is my list of books from goodreads :)'
+              subtitle='Here is my list of books - I have a "thing" for science fiction :)'
               nodes={books}
               booksLoaded={booksLoaded}
               browseMoreHref='/allbooks/'
@@ -181,7 +181,7 @@ class IndexPage extends React.Component {
           {stars && (
             <StarPreviewGrid
               title='starfeed'
-              subtitle='Here are some of the articles I have collected from all my feeds :)'
+              subtitle='Some of the articles collected from all my feeds'
               nodes={stars}
               starsLoaded={starsLoaded}
               browseMoreHref='/allstars/'
@@ -190,7 +190,7 @@ class IndexPage extends React.Component {
            
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
-          <h4>I love live music, and collecting clips of it on Instagram :)</h4>
+          <h4>Live music is a favorite pastime - and collecting clips of it on Instagram :)</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
           <div>
          

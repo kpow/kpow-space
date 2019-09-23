@@ -24,6 +24,10 @@
 h2{
     font-family:'Slackey' !important;
 }
+h1{
+  font-family:'Slackey' !important;
+  font-size: 2.7rem !important;
+}
 
 /*
  * Statically sized elements
