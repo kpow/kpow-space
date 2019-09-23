@@ -31,7 +31,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
                 height: '50px',
                 verticalAlign: 'middle',
                 fontFamily:'Slackey',
-                fontSize:'.85em'
+                fontSize:'.7em'
               }}
             >
               kpow

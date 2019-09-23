@@ -32,9 +32,9 @@ const Footer = (props) => (
                 <Header as='h4' inverted subheader='Kevin Power' content='About Kpow' style={{ margin:0, marginBottom:'30px'}}/>
 
                   <p>
-                        Digital Architect, Leader and Maker.
-                  <br />Voracious Reader and Enamored Dad. 
-                  <br />Music, Travel, Poker, Pugs, and Pixels.
+                      Digital Architect - Leader - Maker.
+                      <br />Voracious Reader and Dad. 
+                      <br />Travel, Ukes, Pugs, and Pixels.
                   </p>
 
               </Grid.Column>
