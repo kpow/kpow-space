@@ -63,6 +63,19 @@ function BookPreview (props) {
     }}
   />
 )}
+
+{shelf == 'unknown' && (
+  <Image
+    floated='right'
+    size='tiny'
+    src={props.book.image_url._text}
+    label={{
+      color: 'red',
+      content:shelf,
+      ribbon: 'right',
+    }}
+  />
+)}
  
   <Card.Header>{props.book.title_without_series._text}</Card.Header>
   <Card.Meta><strong>Author: </strong>{props.book.authors.author.name._text}</Card.Meta>
