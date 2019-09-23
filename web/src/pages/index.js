@@ -15,7 +15,8 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
 import axios from 'axios'
-import {Button, Icon, Responsive, Segment, Dimmer, Loader} from 'semantic-ui-react'
+import {Button, Icon} from 'semantic-ui-react'
+import analytics from '../lib/analytics'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -81,7 +82,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
- 
+    analytics.page()
     console.log('getbooksjson');
       axios.get('https://services.kpow.com/books.php?perPage=12&page=1')
       .then((response) => {

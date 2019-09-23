@@ -6,7 +6,7 @@ import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
-import {Responsive} from 'semantic-ui-react'
+import analytics from '../lib/analytics'
 
 export const query = graphql`
   query ArchivePageQuery {
@@ -49,6 +49,7 @@ const ArchivePage = props => {
  
     return (
     <Layout>
+      {analytics.page()}
       <SEO title='Archive' />
 
       <div className="ui horizontal divider">0101010</div>

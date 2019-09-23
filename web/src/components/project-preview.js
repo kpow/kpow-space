@@ -11,10 +11,9 @@ function ProjectPreview (props) {
   return (
     <div>
     <Link className={styles.root} to={`/project/${props.slug.current}`}>
- 
- 
+
       <Card fluid
-        style={{minHeight:'365px', maxHeight:'365px', marginBottom:'20px'}}>
+        style={{minHeight:'385px', maxHeight:'385px', marginBottom:'20px'}}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img

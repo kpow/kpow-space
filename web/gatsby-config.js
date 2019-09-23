@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-analytics',
     {
       resolve: 'gatsby-source-sanity',
       options: {

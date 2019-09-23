@@ -8,6 +8,7 @@ import Layout from '../containers/layout'
 import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
 import axios from 'axios'
 import {Responsive} from 'semantic-ui-react'
+import analytics from '../lib/analytics'
 
 export const query = graphql`
   query AllstarsPageQuery {
@@ -84,6 +85,7 @@ class AllstarsPage extends React.Component {
   }
 
   componentDidMount() {
+      analytics.page()
       this.getStarData();
   }
 

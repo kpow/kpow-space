@@ -9,6 +9,7 @@ import PrevNextNav from '../components/prev-next-nav'
 import axios from 'axios'
 import convert from 'xml-js'
 import {Responsive} from 'semantic-ui-react'
+import analytics from '../lib/analytics'
 
 export const query = graphql`
   query AllBooksPageQuery {
@@ -88,6 +89,7 @@ class AllbooksPage extends React.Component {
   }
 
   componentDidMount() {
+      analytics.page()
       this.getBookData();
   }
 
