@@ -15,7 +15,7 @@ const Footer = (props) => (
                 <Header inverted as='h4' content='Built with' />
                 <List link inverted>
                 <List.Item>
-                  Using Gatsby for static site generation and React for the front-end. Site deploys to Netlify from Github using a CI pipeline. Using the GoodReads API, Feedbin API, and Instagram.
+                  Using Gatsby for static site generation and React for the front-end. Site deploys to Netlify from Github. Using the GoodReads API, Feedbin API, and Instagram.
                 </List.Item>
                 </List>
               </Grid.Column>

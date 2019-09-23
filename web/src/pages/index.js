@@ -210,8 +210,8 @@ class IndexPage extends React.Component {
           </Button>
          
           </div>
-          <div  style={{marginBottom:'24px'}} className="ui horizontal divider">0101010</div>
-            
+          <div style={{marginBottom:'24px'}} className="ui horizontal divider">0101010</div>
+            <br></br>
         </Layout>
       );
     }
