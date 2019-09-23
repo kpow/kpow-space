@@ -168,7 +168,7 @@ class IndexPage extends React.Component {
           {books && (
             <BookPreviewGrid
               title='bookfeed'
-              subtitle='Here is my list of books - I have a "thing" for science fiction :)'
+              subtitle='Here is my list of books - I have a "thing" for science fiction'
               nodes={books}
               booksLoaded={booksLoaded}
               browseMoreHref='/allbooks/'
@@ -190,7 +190,7 @@ class IndexPage extends React.Component {
            
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
-          <h4>Live music is a favorite pastime - and collecting clips of it on Instagram :)</h4>
+          <h4>Live music is a favorite pastime - and collecting clips of it on Instagram.</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
           <div>
          
@@ -204,10 +204,10 @@ class IndexPage extends React.Component {
               color='blue'
             >
             <Button.Content visible>View on IG</Button.Content>
-            <Button.Content hidden>
-              <Icon name='arrow right' />
-            </Button.Content>
-          </Button>
+              <Button.Content hidden>
+                <Icon name='arrow right' />
+              </Button.Content>
+            </Button>
          
           </div>
           <div style={{marginBottom:'24px'}} className="ui horizontal divider">0101010</div>
