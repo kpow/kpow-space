@@ -21,7 +21,10 @@ function StarPreviewGrid (props) {
         <ul className={styles.grid}>
             {props.nodes &&
               props.nodes.map(node => (
-                <li key={node.id}>
+                <li 
+                    key={node.id}
+                    style={{overflow:'hidden'}}
+                >
                   <StarPreview {...node} />
                 </li>
               ))} 
