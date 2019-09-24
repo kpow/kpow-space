@@ -157,18 +157,29 @@ class IndexPage extends React.Component {
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
             <ProjectPreviewGrid
-              title='k-projects'
-              subtitle='A few of the projects I have worked on. I have more by request'
+              title='projects'
+              subtitle='A few of the projects I have worked on, more by request.'
               nodes={projectNodes}
               browseMoreHref='/archive/'
             />
           )}
           <div className="ui horizontal divider">0101010</div>
+          {stars && (
+            <StarPreviewGrid
+              title='starfeed'
+              subtitle='Some of the articles collected from all my feeds.'
+              nodes={stars}
+              starsLoaded={starsLoaded}
+              browseMoreHref='/allstars/'
+            />
+          )}
+          
+          <div className="ui horizontal divider">0101010</div>
           
           {books && (
             <BookPreviewGrid
               title='bookfeed'
-              subtitle='Here is my list of books - I have a "thing" for science fiction'
+              subtitle='Here is my list of books - I have a "thing" for science fiction.'
               nodes={books}
               booksLoaded={booksLoaded}
               browseMoreHref='/allbooks/'
@@ -176,17 +187,6 @@ class IndexPage extends React.Component {
             />
           )}
           
-          <div className="ui horizontal divider">0101010</div>
-          
-          {stars && (
-            <StarPreviewGrid
-              title='starfeed'
-              subtitle='Some of the articles collected from all my feeds'
-              nodes={stars}
-              starsLoaded={starsLoaded}
-              browseMoreHref='/allstars/'
-            />
-          )}
            
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>

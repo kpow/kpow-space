@@ -58,7 +58,7 @@ const ArchivePage = props => {
         {projectNodes && projectNodes.length > 0 && 
         <ProjectPreviewGrid 
           nodes={projectNodes}
-          title='k-projects archive'
+          title='projects archive'
         />
         }
       </Container>
