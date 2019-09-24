@@ -89,7 +89,8 @@ class AllbooksPage extends React.Component {
     if(this.state.page>1){
       const prevPage = this.state.page-1
       this.setState({
-        page:prevPage
+        page:prevPage,
+        booksLoaded: false,
       })
       this.getBookData(prevPage)
     }

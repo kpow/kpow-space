@@ -73,7 +73,8 @@ class AllstarsPage extends React.Component {
   getNext = () => {
     const nextPage = this.state.page+1
     this.setState({
-      page:nextPage
+      page:nextPage,
+      starsLoaded: false,
     })
     this.getStarData(nextPage)
 
@@ -83,7 +84,8 @@ class AllstarsPage extends React.Component {
     if(this.state.page>1){
       const prevPage = this.state.page-1
       this.setState({
-        page:prevPage
+        page:prevPage,
+        starsLoaded: false,
       })
       this.getStarData(prevPage)
     }
