@@ -39,7 +39,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
           </h1>
         </Menu.Item>
         <Menu.Item position='right' >
-          <a href='https://www.visualcv.com/kevin-power/' target='_new'>resume</a>
+          <a href='https://www.visualcv.com/kevin-power/' target='_blank'>resume</a>
         </Menu.Item>
         <Menu.Item as={Link} to='/archive/'>
           projects
