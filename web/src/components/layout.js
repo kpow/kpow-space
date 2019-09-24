@@ -4,12 +4,12 @@ import Footer from './footer'
 import Helmet from 'react-helmet'
 import {
   Container, Responsive
-} from 'semantic-ui-react';
+} from 'semantic-ui-react'
 
 import '../styles/layout.css'
 import LayoutStyles from './layout.module.css'
 
-const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <>
     <Helmet>
       <link href="https://fonts.googleapis.com/css?family=Slackey&display=swap" rel="stylesheet" />
@@ -22,11 +22,11 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <Container>
       <div className={LayoutStyles.content}>{children}</div>
     </Container>
-    
+
     <Responsive maxWidth={768}>
       <Footer padding='0em 0em' />
     </Responsive>
-    
+
     <Responsive minWidth={768}>
       <Footer padding='5em 0em' />
     </Responsive>

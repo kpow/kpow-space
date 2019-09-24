@@ -8,8 +8,8 @@ const BookImage = (props) => (
     src={props.imageUrl}
     label={{
       color: props.labelColor,
-      content:props.shelf,
-      ribbon: 'right',
+      content: props.shelf,
+      ribbon: 'right'
     }}
   />
 

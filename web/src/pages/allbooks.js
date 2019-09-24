@@ -11,6 +11,7 @@ import convert from 'xml-js'
 import {Responsive} from 'semantic-ui-react'
 import analytics from '../lib/analytics'
 
+
 export const query = graphql`
   query AllBooksPageQuery {
     projects: allSanityProject(
