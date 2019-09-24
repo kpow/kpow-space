@@ -1,11 +1,11 @@
 import React from 'react'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import {ucfirst} from '../lib/string-utils'
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
+import { ucfirst } from '../lib/string-utils'
 
 import styles from './role-list.module.css'
 
-function RoleList ({items, title}) {
+function RoleList ({ items, title }) {
   return (
     <div className={styles.root}>
       <h2>{title}</h2>

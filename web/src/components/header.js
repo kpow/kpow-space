@@ -1,12 +1,12 @@
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
-import {Container, Menu, Responsive} from 'semantic-ui-react'
+import { Container, Menu, Responsive } from 'semantic-ui-react'
 
 import styles from './project-preview.module.css'
 
-import Skull from '../static/skull.svg';
+import Skull from '../static/skull.svg'
 
-const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
+const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className={styles.root}>
 
     <Menu fixed="top" size="large" inverted compact >
@@ -30,8 +30,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
                 paddingTop: '5px',
                 height: '50px',
                 verticalAlign: 'middle',
-                fontFamily:'Slackey',
-                fontSize:'.7em'
+                fontFamily: 'Slackey',
+                fontSize: '.7em'
               }}
             >
               kpow
@@ -50,11 +50,10 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <Menu.Item as={Link} to='/allstars/'>
           stars
         </Menu.Item>
-     
-        
+
       </Container>
     </Menu>
-  
+
   </div>
 )
 

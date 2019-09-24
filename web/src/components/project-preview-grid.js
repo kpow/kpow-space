@@ -1,7 +1,7 @@
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
 import ProjectPreview from './project-preview'
-import {Button, Icon} from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 
 import styles from './project-preview-grid.module.css'
 
@@ -21,16 +21,15 @@ function ProjectPreviewGrid (props) {
       {props.browseMoreHref && (
         <div>
           <Link to={props.browseMoreHref}>
-           <Button animated floated='right'>
-            <Button.Content visible>Browse More</Button.Content>
-            <Button.Content hidden>
-              <Icon name='arrow right' />
-            </Button.Content>
-          </Button>
+            <Button animated floated='right'>
+              <Button.Content visible>Browse More</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' />
+              </Button.Content>
+            </Button>
           </Link>
         </div>
       )}
-       
 
     </div>
   )

@@ -1,8 +1,8 @@
-import {format, distanceInWords, differenceInDays} from 'date-fns'
+import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
-import {Link} from 'gatsby'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
+import { Link } from 'gatsby'
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
@@ -10,7 +10,7 @@ import { Grid, Button, Icon, Header, Divider, Segment } from 'semantic-ui-react'
 import styles from './project.module.css'
 
 function Project (props) {
-  const {_rawBody, title, categories, mainImage, members, url, publishedAt, relatedProjects} = props
+  const { _rawBody, title, categories, mainImage, members, url, publishedAt, relatedProjects } = props
   return (
     <>
     <Divider horizontal>0101010</Divider>
@@ -27,23 +27,23 @@ function Project (props) {
           />
         </div>
       )}
-    <Divider horizontal>~</Divider>
-    <Grid stackable columns={2}>
-    <Grid.Column width={11}>
-      <Header as='h2'>{title}</Header>
-      {_rawBody && <BlockContent blocks={_rawBody || []} />}
-    </Grid.Column>
-    <Grid.Column width={4}>
+      <Divider horizontal>~</Divider>
+      <Grid stackable columns={2}>
+        <Grid.Column width={11}>
+          <Header as='h2'>{title}</Header>
+          {_rawBody && <BlockContent blocks={_rawBody || []} />}
+        </Grid.Column>
+        <Grid.Column width={4}>
           {members && members.length > 0 && <RoleList items={members} title='Project members' />}
-            {categories && categories.length > 0 && (
-              <div>
-                <Header as='h4'>Roles</Header>
-                <ul>
-                  {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
-              </div>
+          {categories && categories.length > 0 && (
+            <div>
+              <Header as='h4'>Roles</Header>
+              <ul>
+                {categories.map(category => (
+                  <li key={category._id}>{category.title}</li>
+                ))}
+              </ul>
+            </div>
           )}
           {url && (
             <>
@@ -56,16 +56,13 @@ function Project (props) {
             </Button>
             </>
           )}
-          
-    </Grid.Column>
-    </Grid>
+
+        </Grid.Column>
+      </Grid>
     </article>
     <Divider horizontal>0101010</Divider>
     </>
   )
 }
-
-
-
 
 export default Project

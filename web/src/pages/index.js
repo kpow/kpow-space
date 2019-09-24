@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {graphql} from 'gatsby'
+import React, { Component } from 'react'
+import { graphql } from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -15,7 +15,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import convert from 'xml-js'
 import axios from 'axios'
-import {Button, Icon} from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import analytics from '../lib/analytics'
 
 export const query = graphql`
@@ -66,10 +66,9 @@ export const query = graphql`
   }
 `
 
-
 class IndexPage extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       error: null,
       booksLoaded: false,
@@ -77,62 +76,59 @@ class IndexPage extends React.Component {
       items: [],
       books: [],
       stars: [],
-      data: props.data,
-    };
+      data: props.data
+    }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     analytics.page()
-    console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=12&page=1')
+    console.log('getbooksjson')
+    axios.get('https://services.kpow.com/books.php?perPage=12&page=1')
       .then((response) => {
-        const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
-        const bookData = json.GoodreadsResponse.reviews.review;
-        const bookNodes = bookData.filter(filterOutToRead).slice(0,3)        
-        
+        const json = JSON.parse(convert.xml2json(response.data, { compact: true, spaces: 4 }))
+        const bookData = json.GoodreadsResponse.reviews.review
+        const bookNodes = bookData.filter(filterOutToRead).slice(0, 3)
+
         this.setState({
           booksLoaded: true,
           books: bookNodes
-        });
+        })
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
       })
-      .finally(() => { });
+      .finally(() => { })
 
-    console.log("getjson");
+    console.log('getjson')
     axios.get('https://services.kpow.com/stars.php?page=' + 1 + '&perPage=3')
-    .then((response) => {
-      let starData = response.data.reverse();
-      this.setState({
-        starsLoaded: true,
-        stars: starData
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-    .finally(() => { });
+      .then((response) => {
+        let starData = response.data.reverse()
+        this.setState({
+          starsLoaded: true,
+          stars: starData
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      .finally(() => { })
   }
 
-  render() {
-
+  render () {
     const getBooksData = (page = 1) => {
-      console.log('getbooksjson');
+      console.log('getbooksjson')
     }
-
 
     const { error, starsLoaded, booksLoaded, items, books, data, stars } = this.state
     const errors = this.props.errors
     const site = (data || {}).site
 
     const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
-    : []
+      ? mapEdgesToNodes(data.projects)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
+      : []
 
-    
     if (errors) {
       return (
         <Layout>
@@ -148,12 +144,12 @@ class IndexPage extends React.Component {
     }
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else {
       return (
         <Layout>
           <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      
+
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
             <ProjectPreviewGrid
@@ -173,9 +169,9 @@ class IndexPage extends React.Component {
               browseMoreHref='/allstars/'
             />
           )}
-          
+
           <div className="ui horizontal divider">0101010</div>
-          
+
           {books && (
             <BookPreviewGrid
               title='bookfeed'
@@ -186,34 +182,33 @@ class IndexPage extends React.Component {
               getBooksData={getBooksData}
             />
           )}
-          
-           
+
           <div className="ui horizontal divider">0101010</div>
           <h2>musicgram</h2>
           <h4>Live music is a favorite pastime - and collecting clips of it on Instagram.</h4>
           <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
           <div>
-         
-           <Button 
-              as='a' 
-              animated 
+
+            <Button
+              as='a'
+              animated
               floated='right'
               href='https://instagram.com/kpow_musicgram'
-              style={{marginTop:'8px'}}
+              style={{ marginTop: '8px' }}
               target='_new'
               color='blue'
             >
-            <Button.Content visible>View on IG</Button.Content>
+              <Button.Content visible>View on IG</Button.Content>
               <Button.Content hidden>
                 <Icon name='arrow right' />
               </Button.Content>
             </Button>
-         
+
           </div>
-          <div style={{marginBottom:'24px'}} className="ui horizontal divider">0101010</div>
-            <br></br>
+          <div style={{ marginBottom: '24px' }} className="ui horizontal divider">0101010</div>
+          <br></br>
         </Layout>
-      );
+      )
     }
   }
 }
