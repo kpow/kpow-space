@@ -6,7 +6,6 @@ import {
   filterOutDocsPublishedInTheFuture,
   filterOutToRead
 } from '../lib/helpers'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import StarPreviewGrid from '../components/star-preview-grid'

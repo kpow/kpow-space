@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Label } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 
 const BookImage = (props) => (
   <Image

@@ -1,16 +1,13 @@
-import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
-import { Link } from 'gatsby'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
-import Container from './container'
 import RoleList from './role-list'
-import { Grid, Button, Icon, Header, Divider, Segment } from 'semantic-ui-react'
+import { Grid, Button, Icon, Header, Divider } from 'semantic-ui-react'
 import styles from './project.module.css'
 
 function Project (props) {
-  const { _rawBody, title, categories, mainImage, members, url, publishedAt, relatedProjects } = props
+  const { _rawBody, title, categories, mainImage, members, url } = props
   return (
     <>
     <Divider horizontal>0101010</Divider>

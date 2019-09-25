@@ -1,9 +1,6 @@
 import React from 'react'
-import { cn, buildImageObj } from '../lib/helpers'
 import BookImage from '../components/book-image'
 import { Card, Rating } from 'semantic-ui-react'
-
-import styles from './book-preview.module.css'
 
 function BookPreview (props) {
   let shelf
@@ -23,7 +20,7 @@ function BookPreview (props) {
       >
         <Card.Content>
 
-          {shelf == 'currently-reading' && (
+          {shelf === 'currently-reading' && (
             <BookImage
               labelColor='purple'
               imageUrl={props.book.image_url._text}
@@ -31,7 +28,7 @@ function BookPreview (props) {
             />
           )}
 
-          {shelf == 'read' && (
+          {shelf === 'read' && (
             <BookImage
               labelColor='teal'
               imageUrl={props.book.image_url._text}
@@ -39,7 +36,7 @@ function BookPreview (props) {
             />
           )}
 
-          {shelf == 'to-read' && (
+          {shelf === 'to-read' && (
             <BookImage
               labelColor='blue'
               imageUrl={props.book.image_url._text}
@@ -47,7 +44,7 @@ function BookPreview (props) {
             />
           )}
 
-          {shelf == 'unknown' && (
+          {shelf === 'unknown' && (
             <BookImage
               labelColor='red'
               imageUrl={props.book.image_url._text}

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { Container, Menu, Responsive } from 'semantic-ui-react'
+import { Container, Menu } from 'semantic-ui-react'
 
 import styles from './project-preview.module.css'
 
@@ -15,6 +15,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
           <h1 className="site-logo">
             <img
               height="50"
+              alt="kpow"
               style={{
                 display: 'inline-block',
                 paddingTop: '3px',
@@ -34,6 +35,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
                 fontSize: '.7em'
               }}
             >
+
               kpow
             </span>
           </h1>

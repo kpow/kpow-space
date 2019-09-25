@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import BookPreview from './book-preview'
-import { Container, Button, Icon, Segment, Dimmer, Loader } from 'semantic-ui-react'
+import { Button, Icon, Segment, Dimmer, Loader } from 'semantic-ui-react'
 import styles from './book-preview-grid.module.css'
 
 function BookPreviewGrid (props) {

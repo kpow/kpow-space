@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Responsive } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 const PrevNextNav = (props) => (
 

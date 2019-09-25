@@ -1,10 +1,8 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BookPreviewGrid from '../components/book-preview-grid'
 import Layout from '../containers/layout'
-import {mapEdgesToNodes, filterOutToRead} from '../lib/helpers'
 import PrevNextNav from '../components/prev-next-nav'
 import axios from 'axios'
 import convert from 'xml-js'
@@ -155,7 +153,7 @@ class AllbooksPage extends React.Component {
         </Responsive>
         
          <div className="ui horizontal divider">0101010</div>
-            <br></br>
+          <br></br>
         </Layout>
       );
     }

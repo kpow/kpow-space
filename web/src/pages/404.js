@@ -2,7 +2,6 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Responsive } from 'semantic-ui-react'
 
 const NotFoundPage = () => (
   <Layout>

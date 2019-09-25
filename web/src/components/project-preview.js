@@ -1,9 +1,9 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { cn, buildImageObj } from '../lib/helpers'
+import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockText from './block-text'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 import styles from './project-preview.module.css'
 
