@@ -1,4 +1,4 @@
-import {format, isFuture} from 'date-fns'
+import { format, isFuture } from 'date-fns'
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -9,20 +9,19 @@ export function mapEdgesToNodes (data) {
   return data.edges.map(edge => edge.node)
 }
 
-export function filterOutDocsWithoutSlugs ({slug}) {
+export function filterOutDocsWithoutSlugs ({ slug }) {
   return (slug || {}).current
 }
 
 export function filterOutToRead (data) {
   try {
-    if(data.shelves.shelf._attributes.name!='to-read') 
-      return data
+    if (data.shelves.shelf._attributes.name !== 'to-read') return data
   } catch (error) {
     console.log(error)
   }
 }
 
-export function filterOutDocsPublishedInTheFuture ({publishedAt}) {
+export function filterOutDocsPublishedInTheFuture ({ publishedAt }) {
   return !isFuture(publishedAt)
 }
 
@@ -32,7 +31,7 @@ export function getBlogUrl (publishedAt, slug) {
 
 export function buildImageObj (source) {
   const imageObj = {
-    asset: {_ref: source.asset._ref || source.asset._id}
+    asset: { _ref: source.asset._ref || source.asset._id }
   }
 
   if (source.crop) imageObj.crop = source.crop
