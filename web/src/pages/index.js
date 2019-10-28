@@ -26,7 +26,7 @@ export const query = graphql`
       keywords
     }
     projects: allSanityProject(
-      limit: 3
+      limit: 5
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
@@ -152,7 +152,7 @@ class IndexPage extends React.Component {
 
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
-            <div>
+            <div style={{ marginBottom: '60px' }}>
               <ProjectPreviewSlider
                 title='projects'
                 subtitle='A few of the projects I have worked on, more by request.'

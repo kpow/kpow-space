@@ -12,24 +12,38 @@
   position: relative;
   padding-bottom: 66.666%;
   background: #eee;
+  bottom: 20px;
 
-  @nest & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+
 }
 
-.title {
-  @media (hover: hover) {
- 
-  }
+.leadMediaThumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.slideTitle {
+ color: #fff;
+ font-size: 24px;
+ position: absolute;
+ padding: 16px;
+ background-color: rgba(0, 0, 0, .6);
+ z-index: 1000;
+ bottom: 0px;
+ font-weight: bold;
+ width: 100%;
+ margin: 0;
+
+}
+
 
 .excerpt {
-
+  color: white;
+  font-size: 14px;
+  padding-top: 10px;
   
 }

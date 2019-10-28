@@ -3,9 +3,10 @@ import Slider from 'react-slick'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import { Link } from 'gatsby'
+import BlockText from './block-text'
 import { Button, Icon } from 'semantic-ui-react'
 
-import styles from './project-preview-grid.module.css'
+import styles from './project-preview.module.css'
 
 class ProjectPreviewSlider extends React.Component {
   constructor (props) {
@@ -33,9 +34,12 @@ class ProjectPreviewSlider extends React.Component {
         {title && <h1>{title}</h1>}
         {subtitle && <h4>{subtitle}</h4>}
         <Slider {...settings}>
-          {nodes &&
-          nodes.map(node => (
-            <div key={node.id}>
+          {nodes && nodes.map(node => (
+            <div key={node.id} className={styles.leadMediaThumb}>
+              <div className={styles.slideTitle}>
+                {node.title}
+                <div className={styles.excerpt}><BlockText blocks={ node._rawExcerpt } /></div>
+              </div>
               {node.mainImage && node.mainImage.asset && (
                 <img
                   src={imageUrlFor(buildImageObj(node.mainImage))
@@ -45,7 +49,7 @@ class ProjectPreviewSlider extends React.Component {
                   alt={node.mainImage.alt}
                 />
               )}
-              <h3>{node.title}</h3>
+
             </div>
           ))}
         </Slider>
