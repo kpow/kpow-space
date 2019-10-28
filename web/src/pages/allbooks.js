@@ -1,14 +1,14 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BookPreviewGrid from '../components/book-preview-grid'
 import Layout from '../containers/layout'
 import PrevNextNav from '../components/prev-next-nav'
 import axios from 'axios'
 import convert from 'xml-js'
-import {Responsive} from 'semantic-ui-react'
+// import getBookData from '../lib/data'
+import { Responsive } from 'semantic-ui-react'
 import analytics from '../lib/analytics'
-
 
 export const query = graphql`
   query AllBooksPageQuery {
@@ -38,72 +38,72 @@ export const query = graphql`
 `
 
 class AllbooksPage extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       error: null,
       booksLoaded: false,
       books: [],
-      page:1
-    };
+      page: 1
+    }
   }
 
-  getBookData=(page=1)=>{
-    console.log('getbooksjson');
-      axios.get('https://services.kpow.com/books.php?perPage=9&page='+page)
+   getBookData = (page = 1) => {
+    console.log('getbooksjson')
+    axios.get('https://services.kpow.com/books.php?perPage=9&page=' + page)
       .then((response) => {
-        const json = JSON.parse(convert.xml2json(response.data, {compact: true, spaces: 4}))
-        const bookData = json.GoodreadsResponse.reviews.review;
-        if(this.state.page>1)window.scrollTo(0, 0);
+        const json = JSON.parse(convert.xml2json(response.data, { compact: true, spaces: 4 }))
+        const bookData = json.GoodreadsResponse.reviews.review
+        console.log(bookData)
+        if (this.state.page > 1)window.scrollTo(0, 0)
         this.setState({
           booksLoaded: true,
           books: bookData
-        });
-
+        })
+  
         analytics.track('data-load', {
           category: 'books',
           label: 'page',
           value: this.state.page
         })
-
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
       })
-      .finally(() => { });
+      .finally(() => { })
   }
+  
 
   getNext = () => {
-    const nextPage = this.state.page+1
+    const nextPage = this.state.page + 1
     this.setState({
-      page:nextPage,
-      booksLoaded: false,
+      page: nextPage,
+      booksLoaded: false
     })
     this.getBookData(nextPage)
 
   }
 
   getPrev = () => {
-    if(this.state.page>1){
-      const prevPage = this.state.page-1
+    if (this.state.page > 1) {
+      const prevPage = this.state.page - 1
       this.setState({
-        page:prevPage,
-        booksLoaded: false,
+        page: prevPage,
+        booksLoaded: false
       })
       this.getBookData(prevPage)
     }
   }
 
-  componentDidMount() {
-      analytics.page()
-      this.getBookData();
+  componentDidMount () {
+    analytics.page()
+    this.getBookData()
   }
 
-  render() {
-
-    const { error, booksLoaded, data, books } = this.state
+  render () {
+    const { error, booksLoaded, books } = this.state
     const errors = this.props.errors
-    
+
     if (errors) {
       return (
         <Layout>
@@ -113,24 +113,24 @@ class AllbooksPage extends React.Component {
     }
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else {
       return (
         <Layout>
           <Responsive maxWidth={768}>
-            <PrevNextNav 
-              pageNumber={this.state.page} 
-              getNext={this.getNext} getPrev={this.getPrev} 
+            <PrevNextNav
+              pageNumber={this.state.page}
+              getNext={this.getNext} getPrev={this.getPrev}
               size='tiny'
             />
           </Responsive>
 
           <div className="ui horizontal divider">0101010</div>
-          
+
           <Responsive minWidth={768}>
-            <PrevNextNav 
-              pageNumber={this.state.page} 
-              getNext={this.getNext} getPrev={this.getPrev} 
+            <PrevNextNav
+              pageNumber={this.state.page}
+              getNext={this.getNext} getPrev={this.getPrev}
               size='medium'
             />
           </Responsive>
@@ -143,16 +143,16 @@ class AllbooksPage extends React.Component {
               nodes={books}
             />
           )}
-                
-        <Responsive maxWidth={768}>
-          <PrevNextNav 
-            pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev}
-            size='mini' 
-           />
-        </Responsive>
-        
-         <div className="ui horizontal divider">0101010</div>
+
+          <Responsive maxWidth={768}>
+            <PrevNextNav
+              pageNumber={this.state.page}
+              getNext={this.getNext} getPrev={this.getPrev}
+              size='mini'
+            />
+          </Responsive>
+
+          <div className="ui horizontal divider">0101010</div>
           <br></br>
         </Layout>
       );

@@ -1,11 +1,9 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import StarPreviewGrid from '../components/star-preview-grid'
 import PrevNextNav from '../components/prev-next-nav'
 import Layout from '../containers/layout'
-import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
 import axios from 'axios'
 import {Responsive} from 'semantic-ui-react'
 import analytics from '../lib/analytics'
@@ -98,7 +96,7 @@ class AllstarsPage extends React.Component {
 
   render() {
 
-    const { error, starsLoaded, data, stars } = this.state
+    const { error, starsLoaded, stars } = this.state
     const errors = this.props.errors
     
     if (errors) {

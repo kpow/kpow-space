@@ -8,6 +8,7 @@ import {
 } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
+import ProjectPreviewSlider from '../components/project-preview-slider'
 import StarPreviewGrid from '../components/star-preview-grid'
 import BookPreviewGrid from '../components/book-preview-grid'
 import SEO from '../components/seo'
@@ -118,7 +119,7 @@ class IndexPage extends React.Component {
       console.log('getbooksjson')
     }
 
-    const { error, starsLoaded, booksLoaded, items, books, data, stars } = this.state
+    const { error, starsLoaded, booksLoaded, books, data, stars } = this.state
     const errors = this.props.errors
     const site = (data || {}).site
 
@@ -151,12 +152,20 @@ class IndexPage extends React.Component {
 
           <div className="ui horizontal divider">0101010</div>
           {projectNodes && (
-            <ProjectPreviewGrid
-              title='projects'
-              subtitle='A few of the projects I have worked on, more by request.'
-              nodes={projectNodes}
-              browseMoreHref='/archive/'
-            />
+            <div>
+              <ProjectPreviewSlider
+                title='projects'
+                subtitle='A few of the projects I have worked on, more by request.'
+                nodes={projectNodes}
+                browseMoreHref='/archive/'
+              />
+              {/* <ProjectPreviewGrid
+                title='projects'
+                subtitle='A few of the projects I have worked on, more by request.'
+                nodes={projectNodes}
+                browseMoreHref='/archive/'
+              /> */}
+            </div>
           )}
           <div className="ui horizontal divider">0101010</div>
           {stars && (
