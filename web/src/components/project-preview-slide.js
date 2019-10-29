@@ -9,35 +9,24 @@ import styles from './project-preview.module.css'
 
 function ProjectPreviewSlide (props) {
   return (
-    <div>
-      <Link className={styles.root} to={`/project/${props.slug.current}`}>
-
-        <Card fluid
-          style={{ minHeight: '385px', maxHeight: '385px', marginBottom: '20px' }}>
-          <div className={styles.leadMediaThumb}>
-            {props.mainImage && props.mainImage.asset && (
-              <img
-                src={imageUrlFor(buildImageObj(props.mainImage))
-                  .width(600)
-                  .height(Math.floor((9 / 16) * 600))
-                  .url()}
-                alt={props.mainImage.alt}
-              />
-            )}
-          </div>
-          <Card.Content>
-            <Card.Header>{props.title}</Card.Header>
-            <Card.Meta>
-              {/* <span className='date'>Joined in 2015</span> */}
-            </Card.Meta>
-            <Card.Description>
-              <BlockText blocks={props._rawExcerpt} />
-            </Card.Description>
-          </Card.Content>
-        </Card>
-
-      </Link>
-    </div>
+    <Link className={styles.root} to={`/project/${props.slug.current}`}>
+      <div key={props.id} className={styles.leadMediaThumb}>
+        <div className={styles.slideTitle}>
+          {props.title}
+          <div className={styles.excerpt}><BlockText blocks={ props._rawExcerpt } /></div>
+          <h2>{ console.log(props) }</h2>
+        </div>
+        {props.mainImage && props.mainImage.asset && (
+          <img
+            src={imageUrlFor(buildImageObj(props.mainImage))
+              .width(1200)
+              .height(Math.floor((9 / 16) * 1200))
+              .url()}
+            alt={props.mainImage.alt}
+          />
+        )}
+      </div>
+    </Link>
   )
 }
 
