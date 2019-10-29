@@ -35,22 +35,26 @@ class ProjectPreviewSlider extends React.Component {
         {subtitle && <h4>{subtitle}</h4>}
         <Slider {...settings}>
           {nodes && nodes.map(node => (
-            <div key={node.id} className={styles.leadMediaThumb}>
-              <div className={styles.slideTitle}>
-                {node.title}
-                <div className={styles.excerpt}><BlockText blocks={ node._rawExcerpt } /></div>
-              </div>
-              {node.mainImage && node.mainImage.asset && (
-                <img
-                  src={imageUrlFor(buildImageObj(node.mainImage))
-                    .width(1200)
-                    .height(Math.floor((9 / 16) * 1200))
-                    .url()}
-                  alt={node.mainImage.alt}
-                />
-              )}
+            <Link className={styles.root} to={`/project/${node.slug.current}`}>
 
-            </div>
+              <div key={node.id} className={styles.leadMediaThumb}>
+                <div className={styles.slideTitle}>
+                  {node.title}
+                  <div className={styles.excerpt}><BlockText blocks={ node._rawExcerpt } /></div>
+                  <h2>{ console.log(node) }</h2>
+                </div>
+                {node.mainImage && node.mainImage.asset && (
+                  <img
+                    src={imageUrlFor(buildImageObj(node.mainImage))
+                      .width(1200)
+                      .height(Math.floor((9 / 16) * 1200))
+                      .url()}
+                    alt={node.mainImage.alt}
+                  />
+                )}
+
+              </div>
+            </Link>
           ))}
         </Slider>
         {browseMoreHref && (
