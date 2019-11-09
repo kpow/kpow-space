@@ -150,72 +150,75 @@ class IndexPage extends React.Component {
       return (
         <Layout>
           <SEO title={site.title} description={site.description} keywords={site.keywords} />
-
-          <div className="ui horizontal divider">0101010</div>
-          {projectNodes && (
-            <div style={{ marginBottom: '60px' }}>
-              <ProjectPreviewSlider
-                title='projects'
-                subtitle='A few of the projects I have worked on, more by request.'
-                nodes={projectNodes}
-                browseMoreHref='/archive/'
+          <main>
+            <div className="ui horizontal divider">0101010</div>
+            {projectNodes && (
+              <div style={{ marginBottom: '60px' }}>
+                <ProjectPreviewSlider
+                  title='projects'
+                  subtitle='A few of the projects I have worked on, more by request.'
+                  nodes={projectNodes}
+                  browseMoreHref='/archive/'
+                />
+                {/* <ProjectPreviewGrid
+                  title='projects'
+                  subtitle='A few of the projects I have worked on, more by request.'
+                  nodes={projectNodes}
+                  browseMoreHref='/archive/'
+                /> */}
+              </div>
+            )}
+            <div className="ui horizontal divider">0101010</div>
+            {stars && (
+              <StarPreviewGrid
+                title='starfeed'
+                subtitle='Some of the articles collected from all my feeds.'
+                nodes={stars}
+                starsLoaded={starsLoaded}
+                browseMoreHref='/allstars/'
               />
-              {/* <ProjectPreviewGrid
-                title='projects'
-                subtitle='A few of the projects I have worked on, more by request.'
-                nodes={projectNodes}
-                browseMoreHref='/archive/'
-              /> */}
-            </div>
-          )}
-          <div className="ui horizontal divider">0101010</div>
-          {stars && (
-            <StarPreviewGrid
-              title='starfeed'
-              subtitle='Some of the articles collected from all my feeds.'
-              nodes={stars}
-              starsLoaded={starsLoaded}
-              browseMoreHref='/allstars/'
-            />
-          )}
+            )}
 
-          <div className="ui horizontal divider">0101010</div>
+            <div className="ui horizontal divider">0101010</div>
 
-          {books && (
-            <BookPreviewGrid
-              title='bookfeed'
-              subtitle='Here is my list of books - I have a "thing" for science fiction.'
-              nodes={books}
-              booksLoaded={booksLoaded}
-              browseMoreHref='/allbooks/'
-              getBooksData={getBooksData}
-            />
-          )}
+            {books && (
+              <BookPreviewGrid
+                title='bookfeed'
+                subtitle='Here is my list of books - I have a "thing" for science fiction.'
+                nodes={books}
+                booksLoaded={booksLoaded}
+                browseMoreHref='/allbooks/'
+                getBooksData={getBooksData}
+              />
+            )}
 
-          <div className="ui horizontal divider">0101010</div>
-          <h2>musicgram</h2>
-          <h4>Live music is a favorite pastime - and collecting clips of it on Instagram.</h4>
-          <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
-          <div>
+            <div className="ui horizontal divider">0101010</div>
+            <section>
+              <h2>musicgram</h2>
+              <h4>Live music is a favorite pastime - and collecting clips of it on Instagram.</h4>
+              <div className="elfsight-app-aa9b91b7-7757-4793-aae3-67df059446a2"></div>
+              <div>
 
-            <Button
-              as='a'
-              animated
-              floated='right'
-              href='https://instagram.com/kpow_musicgram'
-              style={{ marginTop: '8px' }}
-              target='_new'
-              color='blue'
-            >
-              <Button.Content visible>View on IG</Button.Content>
-              <Button.Content hidden>
-                <Icon name='arrow right' />
-              </Button.Content>
-            </Button>
+                <Button
+                  as='a'
+                  animated
+                  floated='right'
+                  href='https://instagram.com/kpow_musicgram'
+                  style={{ marginTop: '8px' }}
+                  target='_new'
+                  color='blue'
+                >
+                  <Button.Content visible>View on IG</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name='arrow right' />
+                  </Button.Content>
+                </Button>
 
-          </div>
-          <div style={{ marginBottom: '24px' }} className="ui horizontal divider">0101010</div>
-          <br></br>
+              </div>
+            </section>
+            <div style={{ marginBottom: '24px' }} className="ui horizontal divider">0101010</div>
+            <br></br>
+          </main>
         </Layout>
       )
     }

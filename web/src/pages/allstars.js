@@ -46,7 +46,7 @@ class AllstarsPage extends React.Component {
     };
   }
 
-  getStarData=(page=1)=>{
+  getStarData = (page=1) => {
     console.log("getjson");
     axios.get('https://services.kpow.com/stars.php?page=' + page + '&perPage=9')
     .then((response) => {
@@ -112,52 +112,53 @@ class AllstarsPage extends React.Component {
     } else {
       return (
         <Layout>
- 
-          <Responsive maxWidth={768}>
-            <PrevNextNav 
-            pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev} 
-            size='tiny'
-          />
-          </Responsive>
-
-          <div className="ui horizontal divider">0101010</div>
-          
-          <Responsive minWidth={768}>
-            <PrevNextNav 
-            pageNumber={this.state.page} 
-            getNext={this.getNext} getPrev={this.getPrev} 
-            size='medium'
-          />
-          </Responsive>
-
-          {stars && (
-            <StarPreviewGrid
-              title='starfeed'
-              subtitle='Some of the articles collected from all my feeds'
-              starsLoaded={starsLoaded}
-              nodes={stars}
-            />
-          )}
-      
-          <Responsive minWidth={768}>
-            <PrevNextNav 
-              pageNumber={this.state.page} 
-              getNext={this.getNext} getPrev={this.getPrev} 
-              size='medium'
-            />
-          </Responsive>
-          <Responsive maxWidth={768}>
-            <PrevNextNav 
+          <main>
+            <Responsive maxWidth={768}>
+              <PrevNextNav 
               pageNumber={this.state.page} 
               getNext={this.getNext} getPrev={this.getPrev} 
               size='tiny'
             />
-          </Responsive>
+            </Responsive>
 
-          <div className="ui horizontal divider">0101010</div>
+            <div className="ui horizontal divider">0101010</div>
+            
+            <Responsive minWidth={768}>
+              <PrevNextNav 
+              pageNumber={this.state.page} 
+              getNext={this.getNext} getPrev={this.getPrev} 
+              size='medium'
+            />
+            </Responsive>
 
-          <br></br>
+            {stars && (
+              <StarPreviewGrid
+                title='starfeed'
+                subtitle='Some of the articles collected from all my feeds'
+                starsLoaded={starsLoaded}
+                nodes={stars}
+              />
+            )}
+        
+            <Responsive minWidth={768}>
+              <PrevNextNav 
+                pageNumber={this.state.page} 
+                getNext={this.getNext} getPrev={this.getPrev} 
+                size='medium'
+              />
+            </Responsive>
+            <Responsive maxWidth={768}>
+              <PrevNextNav 
+                pageNumber={this.state.page} 
+                getNext={this.getNext} getPrev={this.getPrev} 
+                size='tiny'
+              />
+            </Responsive>
+
+            <div className="ui horizontal divider">0101010</div>
+
+            <br></br>
+          </main>
         </Layout>
       );
     }

@@ -51,18 +51,19 @@ const ArchivePage = props => {
     <Layout>
       {analytics.page()}
       <SEO title='Archive' />
+      <main>
+        <div className="ui horizontal divider">0101010</div>
 
-      <div className="ui horizontal divider">0101010</div>
-
-      <Container>
-        {projectNodes && projectNodes.length > 0 &&
-        <ProjectPreviewGrid
-          nodes={projectNodes}
-          title='projects archive'
-          subtitle='&nbsp;'
-        />
-        }
-      </Container>
+        <Container>
+          {projectNodes && projectNodes.length > 0 &&
+          <ProjectPreviewGrid
+            nodes={projectNodes}
+            title='projects archive'
+            subtitle='&nbsp;'
+          />
+          }
+        </Container>
+      </main>
     </Layout>
   )
 }

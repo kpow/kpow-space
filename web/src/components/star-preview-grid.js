@@ -7,7 +7,7 @@ import styles from './project-preview-grid.module.css'
 
 function StarPreviewGrid (props) {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
       {props.subtitle && <h4>{props.subtitle}</h4>}
 
@@ -43,7 +43,7 @@ function StarPreviewGrid (props) {
         </div>
       )}
 
-    </div>
+    </section>
   )
 }
 

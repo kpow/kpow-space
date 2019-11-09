@@ -7,7 +7,7 @@ import styles from './book-preview-grid.module.css'
 function BookPreviewGrid (props) {
   return (
 
-    <div className={styles.root}>
+    <section className={styles.root}>
       {props.title && <h2>{props.title}</h2>}
       {props.subtitle && <h4>{props.subtitle}</h4>}
 
@@ -39,7 +39,7 @@ function BookPreviewGrid (props) {
           </Link>
         </div>
       )}
-    </div>
+    </section>
   )
 }
 

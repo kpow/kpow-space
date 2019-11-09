@@ -7,7 +7,7 @@ import styles from './project-preview-grid.module.css'
 
 function ProjectPreviewGrid (props) {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       {props.title && <h1>{props.title}</h1>}
       {props.subtitle && <h4>{props.subtitle}</h4>}
       <ul className={styles.grid}>
@@ -31,7 +31,7 @@ function ProjectPreviewGrid (props) {
         </div>
       )}
 
-    </div>
+    </section>
   )
 }
 

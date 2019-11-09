@@ -31,7 +31,7 @@ class ProjectPreviewSlider extends React.Component {
       slidesToScroll: 1
     }
     return (
-      <div className={styles.root}>
+      <section className={styles.root}>
         {title && <h1>{title}</h1>}
         {subtitle && <h4>{subtitle}</h4>}
         <Slider {...settings}>
@@ -51,7 +51,7 @@ class ProjectPreviewSlider extends React.Component {
             </Link>
           </div>
         )}
-      </div>
+      </section>
 
     )
   }

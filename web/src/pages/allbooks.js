@@ -117,43 +117,45 @@ class AllbooksPage extends React.Component {
     } else {
       return (
         <Layout>
-          <Responsive maxWidth={768}>
-            <PrevNextNav
-              pageNumber={this.state.page}
-              getNext={this.getNext} getPrev={this.getPrev}
-              size='tiny'
-            />
-          </Responsive>
+          <main>
+            <Responsive maxWidth={768}>
+              <PrevNextNav
+                pageNumber={this.state.page}
+                getNext={this.getNext} getPrev={this.getPrev}
+                size='tiny'
+              />
+            </Responsive>
 
-          <div className="ui horizontal divider">0101010</div>
+            <div className="ui horizontal divider">0101010</div>
 
-          <Responsive minWidth={768}>
-            <PrevNextNav
-              pageNumber={this.state.page}
-              getNext={this.getNext} getPrev={this.getPrev}
-              size='medium'
-            />
-          </Responsive>
+            <Responsive minWidth={768}>
+              <PrevNextNav
+                pageNumber={this.state.page}
+                getNext={this.getNext} getPrev={this.getPrev}
+                size='medium'
+              />
+            </Responsive>
 
-          {books && (
-            <BookPreviewGrid
-              title='bookfeed'
-              subtitle='Here is my list of books - I have a "thing" for science fiction :)'
-              booksLoaded={booksLoaded}
-              nodes={books}
-            />
-          )}
+            {books && (
+              <BookPreviewGrid
+                title='bookfeed'
+                subtitle='Here is my list of books - I have a "thing" for science fiction :)'
+                booksLoaded={booksLoaded}
+                nodes={books}
+              />
+            )}
 
-          <Responsive maxWidth={768}>
-            <PrevNextNav
-              pageNumber={this.state.page}
-              getNext={this.getNext} getPrev={this.getPrev}
-              size='mini'
-            />
-          </Responsive>
+            <Responsive maxWidth={768}>
+              <PrevNextNav
+                pageNumber={this.state.page}
+                getNext={this.getNext} getPrev={this.getPrev}
+                size='mini'
+              />
+            </Responsive>
 
-          <div className="ui horizontal divider">0101010</div>
-          <br></br>
+            <div className="ui horizontal divider">0101010</div>
+            <br></br>
+          </main>
         </Layout>
       );
     }
