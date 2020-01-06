@@ -3,7 +3,6 @@ import React from 'react'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockText from './block-text'
-import { Card } from 'semantic-ui-react'
 
 import styles from './project-preview.module.css'
 
