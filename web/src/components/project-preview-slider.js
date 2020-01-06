@@ -1,9 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
 import { Link } from 'gatsby'
-import BlockText from './block-text'
 import { Button, Icon } from 'semantic-ui-react'
 import ProjectPreviewSlide from './project-preview-slide'
 
