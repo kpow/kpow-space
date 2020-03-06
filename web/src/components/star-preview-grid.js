@@ -5,21 +5,25 @@ import { Button, Icon, Segment, Dimmer, Loader } from 'semantic-ui-react'
 
 import styles from './project-preview-grid.module.css'
 
-function StarPreviewGrid (props) {
+function StarPreviewGrid ({title, 
+                           subtitle, 
+                           starsLoaded, 
+                           nodes, 
+                           browseMoreHref}) {
   return (
     <section className={styles.root}>
-      {props.title && <h2>{props.title}</h2>}
-      {props.subtitle && <h4>{props.subtitle}</h4>}
+      {title && <h2>{title}</h2>}
+      {subtitle && <h4>{subtitle}</h4>}
 
       <Segment basic style={{ minHeight: '150px' }}>
-        {!props.starsLoaded && (
+        {!starsLoaded && (
           <Dimmer active inverted>
             <Loader size='large'>Loading</Loader>
           </Dimmer>
         )}
         <ul className={styles.grid}>
-          {props.nodes &&
-              props.nodes.map(node => (
+          {nodes &&
+              nodes.map(node => (
                 <li
                   key={node.id}
                   style={{ overflow: 'hidden' }}
@@ -30,9 +34,9 @@ function StarPreviewGrid (props) {
         </ul>
       </Segment>
 
-      {props.browseMoreHref && (
+      {browseMoreHref && (
         <div>
-          <Link to={props.browseMoreHref}>
+          <Link to={browseMoreHref}>
             <Button animated floated='right'>
               <Button.Content visible>Browse More</Button.Content>
               <Button.Content hidden>

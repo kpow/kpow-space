@@ -11,7 +11,7 @@ import analytics from '../lib/analytics'
 export const query = graphql`
   query ArchivePageQuery {
     projects: allSanityProject(
-      limit: 12
+      limit: 16
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {

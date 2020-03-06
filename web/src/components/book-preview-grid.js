@@ -4,22 +4,26 @@ import BookPreview from './book-preview'
 import { Button, Icon, Segment, Dimmer, Loader } from 'semantic-ui-react'
 import styles from './book-preview-grid.module.css'
 
-function BookPreviewGrid (props) {
+function BookPreviewGrid ({title, 
+                          subtitle, 
+                          booksLoaded, 
+                          nodes, 
+                          browseMoreHref }) {
   return (
 
     <section className={styles.root}>
-      {props.title && <h2>{props.title}</h2>}
-      {props.subtitle && <h4>{props.subtitle}</h4>}
+      {title && <h2>{title}</h2>}
+      {subtitle && <h4>{subtitle}</h4>}
 
       <Segment basic style={{ minHeight: '150px' }}>
-        {!props.booksLoaded && (
+        {!booksLoaded && (
           <Dimmer active inverted>
             <Loader size='large'>Loading</Loader>
           </Dimmer>
         )}
         <ul className={styles.grid}>
-          {props.nodes &&
-            props.nodes.map(node => (
+          {nodes &&
+            nodes.map(node => (
               <li key={node.id._text}>
                 <BookPreview {...node} />
               </li>
@@ -27,9 +31,9 @@ function BookPreviewGrid (props) {
         </ul>
       </Segment>
 
-      {props.browseMoreHref && (
+      {browseMoreHref && (
         <div>
-          <Link to={props.browseMoreHref}>
+          <Link to={browseMoreHref}>
             <Button animated floated='right'>
               <Button.Content visible>Browse More</Button.Content>
               <Button.Content hidden>

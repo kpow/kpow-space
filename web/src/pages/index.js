@@ -7,7 +7,6 @@ import {
   filterOutToRead
 } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
 import ProjectPreviewSlider from '../components/project-preview-slider'
 import StarPreviewGrid from '../components/star-preview-grid'
 import BookPreviewGrid from '../components/book-preview-grid'

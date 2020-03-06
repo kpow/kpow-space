@@ -7,31 +7,31 @@ import { Card } from 'semantic-ui-react'
 
 import styles from './project-preview.module.css'
 
-function ProjectPreview (props) {
+function ProjectPreview ({slug, mainImage, title, _rawExcerpt }) {
   return (
     <div>
-      <Link className={styles.root} to={`/project/${props.slug.current}`}>
+      <Link className={styles.root} to={`/project/${slug.current}`}>
 
         <Card fluid
           style={{ minHeight: '385px', maxHeight: '385px', marginBottom: '20px' }}>
           <div className={styles.leadMediaThumb}>
-            {props.mainImage && props.mainImage.asset && (
+            {mainImage && mainImage.asset && (
               <img
-                src={imageUrlFor(buildImageObj(props.mainImage))
+                src={imageUrlFor(buildImageObj(mainImage))
                   .width(600)
                   .height(Math.floor((9 / 16) * 600))
                   .url()}
-                alt={props.mainImage.alt}
+                alt={mainImage.alt}
               />
             )}
           </div>
           <Card.Content>
-            <Card.Header>{props.title}</Card.Header>
+            <Card.Header>{title}</Card.Header>
             <Card.Meta>
               {/* <span className='date'>Joined in 2015</span> */}
             </Card.Meta>
             <Card.Description>
-              <BlockText blocks={props._rawExcerpt} />
+              <BlockText blocks={_rawExcerpt} />
             </Card.Description>
           </Card.Content>
         </Card>

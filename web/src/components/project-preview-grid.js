@@ -5,22 +5,22 @@ import { Button, Icon } from 'semantic-ui-react'
 
 import styles from './project-preview-grid.module.css'
 
-function ProjectPreviewGrid (props) {
+function ProjectPreviewGrid ({title, subtitle, nodes, browseMoreHref}) {
   return (
     <section className={styles.root}>
-      {props.title && <h1>{props.title}</h1>}
-      {props.subtitle && <h4>{props.subtitle}</h4>}
+      {title && <h1>{title}</h1>}
+      {subtitle && <h4>{subtitle}</h4>}
       <ul className={styles.grid}>
-        {props.nodes &&
-          props.nodes.map(node => (
+        {nodes &&
+          nodes.map(node => (
             <li key={node.id}>
               <ProjectPreview {...node} />
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
+      {browseMoreHref && (
         <div>
-          <Link to={props.browseMoreHref}>
+          <Link to={browseMoreHref}>
             <Button animated floated='right'>
               <Button.Content visible>Browse More</Button.Content>
               <Button.Content hidden>

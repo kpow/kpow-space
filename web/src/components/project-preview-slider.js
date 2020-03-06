@@ -8,7 +8,6 @@ import styles from './project-preview.module.css'
 
 class ProjectPreviewSlider extends React.Component {
   constructor (props) {
-    console.log(props)
     super(props)
     this.state = {
       title: props.title,

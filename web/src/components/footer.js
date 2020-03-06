@@ -5,8 +5,8 @@ import {
 
 const headShot = require('../static/headshot.png')
 
-const Footer = (props) => (
-  <Segment inverted vertical style={{ padding: props.padding }}>
+const Footer = ({padding}) => (
+  <Segment inverted vertical style={{ padding: padding }}>
     <Container>
       <Grid divided inverted stackable>
         <Grid.Row>

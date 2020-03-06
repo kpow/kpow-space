@@ -6,13 +6,17 @@ import RoleList from './role-list'
 import { Grid, Button, Icon, Header, Divider } from 'semantic-ui-react'
 import styles from './project.module.css'
 
-function Project (props) {
-  const { _rawBody, title, categories, mainImage, members, url } = props
+function Project ({ _rawBody, 
+                    title, 
+                    categories, 
+                    mainImage, 
+                    members, 
+                    url }) {
   return (
     <>
     <Divider horizontal>0101010</Divider>
     <article className={styles.root}>
-      {props.mainImage && mainImage.asset && (
+      {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <img
             src={imageUrlFor(buildImageObj(mainImage))

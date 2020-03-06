@@ -49,13 +49,13 @@ class AllbooksPage extends React.Component {
   }
 
    getBookData = (page = 1) => {
-    console.log('getbooksjson')
-    axios.get('https://services.kpow.com/books.php?perPage=9&page=' + page)
+    axios.get('https://services.kpow.com/books.php?perPage=200&page=' + page)
       .then((response) => {
         const json = JSON.parse(convert.xml2json(response.data, { compact: true, spaces: 4 }))
         const bookData = json.GoodreadsResponse.reviews.review
-        console.log(bookData)
+        
         if (this.state.page > 1)window.scrollTo(0, 0)
+        
         this.setState({
           booksLoaded: true,
           books: bookData
@@ -66,6 +66,7 @@ class AllbooksPage extends React.Component {
           label: 'page',
           value: this.state.page
         })
+
       })
       .catch((error) => {
         console.log(error)
@@ -75,23 +76,25 @@ class AllbooksPage extends React.Component {
   
 
   getNext = () => {
-    const nextPage = this.state.page + 1
-    this.setState({
-      page: nextPage,
-      booksLoaded: false
+    this.setState(prevState => {
+      return {
+        page: prevState.page + 1,
+        booksLoaded: false
+      }
     })
-    this.getBookData(nextPage)
+    this.getBookData(this.state.page + 1)
 
   }
 
   getPrev = () => {
     if (this.state.page > 1) {
-      const prevPage = this.state.page - 1
-      this.setState({
-        page: prevPage,
-        booksLoaded: false
+      this.setState(prevState => {
+        return {
+          page: prevState.page - 1,
+          booksLoaded: false
+        }
       })
-      this.getBookData(prevPage)
+      this.getBookData(this.state.page - 1)
     }
   }
 
@@ -121,7 +124,8 @@ class AllbooksPage extends React.Component {
             <Responsive maxWidth={768}>
               <PrevNextNav
                 pageNumber={this.state.page}
-                getNext={this.getNext} getPrev={this.getPrev}
+                getNext={this.getNext} 
+                getPrev={this.getPrev}
                 size='tiny'
               />
             </Responsive>
@@ -131,7 +135,8 @@ class AllbooksPage extends React.Component {
             <Responsive minWidth={768}>
               <PrevNextNav
                 pageNumber={this.state.page}
-                getNext={this.getNext} getPrev={this.getPrev}
+                getNext={this.getNext} 
+                getPrev={this.getPrev}
                 size='medium'
               />
             </Responsive>
@@ -148,7 +153,8 @@ class AllbooksPage extends React.Component {
             <Responsive maxWidth={768}>
               <PrevNextNav
                 pageNumber={this.state.page}
-                getNext={this.getNext} getPrev={this.getPrev}
+                getNext={this.getNext} 
+                getPrev={this.getPrev}
                 size='mini'
               />
             </Responsive>

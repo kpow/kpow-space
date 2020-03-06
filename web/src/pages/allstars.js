@@ -69,23 +69,25 @@ class AllstarsPage extends React.Component {
   }
 
   getNext = () => {
-    const nextPage = this.state.page+1
-    this.setState({
-      page:nextPage,
-      starsLoaded: false,
+    this.setState(prevState => {
+      return {
+        page: prevState.page + 1,
+        starsLoaded: false
+      }
     })
-    this.getStarData(nextPage)
+    this.getStarData(this.state.page + 1)
 
   }
 
   getPrev = () => {
-    if(this.state.page>1){
-      const prevPage = this.state.page-1
-      this.setState({
-        page:prevPage,
-        starsLoaded: false,
+    if (this.state.page > 1) {
+      this.setState(prevState => {
+        return {
+          page: prevState.page - 1,
+          starsLoaded: false
+        }
       })
-      this.getStarData(prevPage)
+      this.getStarData(this.state.page - 1)
     }
   }
 
