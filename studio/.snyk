@@ -1,0 +1,60 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@sanity/desk-tool > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - sanity-plugin-dashboard-widget-document-list > lodash:
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/desk-tool > @sanity/form-builder > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/components > react-sortable-hoc > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - sanity-plugin-dashboard-widget-document-list > @sanity/components > lodash:
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/desk-tool > @sanity/form-builder > @sanity/block-tools > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - sanity-plugin-dashboard-widget-document-list > @sanity/components > react-sortable-hoc > lodash:
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/export > archiver > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/desk-tool > @sanity/form-builder > slate > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/desk-tool > @sanity/form-builder > slate-react > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - sanity-plugin-dashboard-widget-document-list > @sanity/components > @sanity/imagetool > lodash:
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > @sanity/resolver > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/export > archiver > archiver-utils > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/export > archiver > async > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > extract-text-webpack-plugin > async > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > webpack > async > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/export > archiver > zip-stream > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > jsdom > request-promise-native > request-promise-core > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - sanity-plugin-dashboard-widget-document-list > @sanity/components > @sanity/date-input > @sanity/rich-date-input > lodash:
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > @sanity/webpack-loader > @sanity/resolver > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/export > archiver > zip-stream > archiver-utils > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
+    - '@sanity/core > @sanity/server > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-05-01T07:38:41.094Z'
