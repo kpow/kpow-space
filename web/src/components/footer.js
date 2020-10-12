@@ -31,7 +31,6 @@ const Footer = ({padding}) => (
             <Header as='h4' inverted subheader='Kevin Power' content='About Kpow' style={{ margin: 0, marginBottom: '30px' }}/>
             <p>
                 Digital Architect - Leader - Maker.
-              <br />Director of E-Commerce at Barefoot Spas
               <br />Voracious Reader and Dad.
               <br />Travel, Ukes, Pugs, and Pixels.
             </p>
