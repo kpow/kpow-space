@@ -1,6 +1,6 @@
 # kpow-space
 
-https://kpow.com
+[https://gatsby.kpow-wow.com/](https://gatsby.kpow-wow.com/)
 
 ## What you have
 
